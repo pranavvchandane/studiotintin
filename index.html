@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Studio TinTin — Cinematography / Photography / Visual Stories</title>
+
+<meta name="description"
+content="Studio TinTin — Cinematography, photography and visual production for film, advertising, fashion and documentary.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: #080808;
+}
+
+body {
+    background: #080808;
+    color: #f3f1ec;
+    font-family: "Manrope", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #f3f1ec;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition:
+        width .3s ease,
+        height .3s ease;
+}
+
+.cursor.large {
+    width: 70px;
+    height: 70px;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.container {
+    width: min(92%, 1500px);
+    margin: auto;
+}
+
+.mono {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.section {
+    padding: 160px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 70px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    padding-top: 18px;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 28px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -.04em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background: white;
+    transition: width .4s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.75)
+        ),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2400&q=85");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    animation: heroZoom 12s ease forwards;
+}
+
+@keyframes heroZoom {
+    from {
+        transform: scale(1.08);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-bottom: 70px;
+}
+
+.hero-kicker {
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: clamp(70px, 14vw, 220px);
+    line-height: .78;
+    letter-spacing: -.075em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero-title span {
+    display: block;
+}
+
+.hero-bottom {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.hero-description {
+    max-width: 390px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.7);
+}
+
+.scroll {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.scroll-line {
+    width: 50px;
+    height: 1px;
+    background: white;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro-text {
+    max-width: 1050px;
+    font-size: clamp(38px, 5vw, 78px);
+    line-height: 1.03;
+    letter-spacing: -.055em;
+}
+
+.intro-text .dim {
+    color: rgba(255,255,255,.25);
+}
+
+/* =========================================================
+   WORK
+========================================================= */
+
+.work {
+    padding-bottom: 180px;
+}
+
+.project {
+    margin-bottom: 160px;
+    position: relative;
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-image img {
+    height: 75vh;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+
+.project:hover .project-image img {
+    transform: scale(1.035);
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    margin-top: 15px;
+}
+
+.project-number {
+    color: rgba(255,255,255,.4);
+}
+
+.project-title {
+    font-size: clamp(32px, 5vw, 75px);
+    line-height: .9;
+    letter-spacing: -.05em;
+    text-transform: uppercase;
+}
+
+.project-meta {
+    text-align: right;
+    color: rgba(255,255,255,.5);
+    line-height: 1.8;
+}
+
+/* alternating projects */
+
+.project:nth-child(2) {
+    width: 75%;
+    margin-left: auto;
+}
+
+.project:nth-child(3) {
+    width: 88%;
+}
+
+.project:nth-child(4) {
+    width: 68%;
+    margin-left: 15%;
+}
+
+/* =========================================================
+   SHOWREEL
+========================================================= */
+
+.showreel {
+    height: 90vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+.showreel-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2400&q=85");
+    background-size: cover;
+    background-position: center;
+    transition: transform 1.2s ease;
+}
+
+.showreel:hover .showreel-bg {
+    transform: scale(1.04);
+}
+
+.reel-button {
+    position: relative;
+    z-index: 2;
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.reel-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.08);
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-list {
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.service {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 30px;
+    padding: 35px 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    transition: padding .5s ease;
+}
+
+.service:hover {
+    padding-left: 20px;
+}
+
+.service-title {
+    font-size: clamp(30px, 4vw, 60px);
+    letter-spacing: -.05em;
+    text-transform: uppercase;
+}
+
+.service-description {
+    color: rgba(255,255,255,.5);
+    max-width: 350px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.about-image {
+    overflow: hidden;
+}
+
+.about-image img {
+    height: 80vh;
+    object-fit: cover;
+}
+
+.about-text {
+    font-size: clamp(25px, 3vw, 45px);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+.about-small {
+    margin-top: 50px;
+    max-width: 450px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.55);
+}
+
+/* =========================================================
+   CLIENTS
+========================================================= */
+
+.clients {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.client {
+    padding: 40px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    font-size: 25px;
+    letter-spacing: -.04em;
+}
+
+.client:nth-child(3n+2),
+.client:nth-child(3n+3) {
+    border-left: 1px solid rgba(255,255,255,.2);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-title {
+    font-size: clamp(60px, 11vw, 170px);
+    line-height: .8;
+    letter-spacing: -.075em;
+    text-transform: uppercase;
+}
+
+.contact-email {
+    margin-top: 70px;
+    display: inline-block;
+    font-size: clamp(20px, 3vw, 40px);
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    padding-bottom: 8px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid rgba(255,255,255,.2);
+    padding: 30px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    gap: 25px;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 22px 5%;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .section {
+        padding: 100px 0;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        padding-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 21vw;
+    }
+
+    .hero-bottom {
+        margin-top: 45px;
+        display: block;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .scroll {
+        margin-top: 30px;
+    }
+
+    .intro {
+        min-height: 70vh;
+    }
+
+    .intro-text {
+        font-size: 34px;
+    }
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+
+    .project,
+    .project:nth-child(2),
+    .project:nth-child(3),
+    .project:nth-child(4) {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 90px;
+    }
+
+    .project-image img {
+        height: 55vh;
+    }
+
+    .project-info {
+        grid-template-columns: 35px 1fr;
+        gap: 10px;
+    }
+
+    .project-meta {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .project-title {
+        font-size: 38px;
+    }
+
+    .showreel {
+        height: 65vh;
+        min-height: 450px;
+    }
+
+    .reel-button {
+        width: 130px;
+        height: 130px;
+    }
+
+    .service {
+        grid-template-columns: 35px 1fr;
+    }
+
+    .service-description {
+        grid-column: 2;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-image img {
+        height: 65vh;
+    }
+
+    .clients {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .client {
+        font-size: 18px;
+    }
+
+    .client:nth-child(3n+2),
+    .client:nth-child(3n+3) {
+        border-left: none;
+    }
+
+    .client:nth-child(even) {
+        border-left: 1px solid rgba(255,255,255,.2);
+    }
+
+    .contact {
+        min-height: 70vh;
+    }
+
+    .contact-title {
+        font-size: 20vw;
+    }
+
+    .contact-email {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+
+    .footer-inner {
+        display: block;
+    }
+
+    .socials {
+        margin-top: 20px;
+    }
+
+    .cursor {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <a href="#" class="logo">
+        STUDIO TINTIN
+    </a>
+
+    <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-content container">
+
+        <div class="hero-kicker mono">
+            Mumbai / India — Visual Production Studio
+        </div>
+
+        <h1 class="hero-title">
+            <span>Studio</span>
+            <span>TinTin</span>
+        </h1>
+
+        <div class="hero-bottom">
+
+            <p class="hero-description">
+                Cinematography, photography and visual storytelling
+                across film, advertising, fashion and documentary.
+            </p>
+
+            <div class="scroll mono">
+                <span class="scroll-line"></span>
+                Scroll to explore
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro section">
+
+    <div class="container">
+
+        <p class="intro-text reveal">
+
+            We work behind the image,
+            <span class="dim">
+                behind the scene,
+            </span>
+            and inside the story.
+
+            <br><br>
+
+            Creating visual work
+            <span class="dim">
+                that stays with you.
+            </span>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SELECTED WORK
+===================================================== -->
+
+<section id="work" class="work">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="mono">
+                Selected Work
+            </span>
+
+            <span class="mono">
+                01 — 04
+            </span>
+
+        </div>
+
+
+        <!-- PROJECT 01 -->
+
+        <article class="project reveal">
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2200&q=85"
+                    alt="Cinema production">
+
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-number mono">
+                    01
+                </div>
+
+                <h2 class="project-title">
+                    CTRL
+                </h2>
+
+                <div class="project-meta mono">
+                    FILM / BTS<br>
+                    NETFLIX
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+
+        <article class="project reveal">
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2200&q=85"
+                    alt="Film production">
+
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-number mono">
+                    02
+                </div>
+
+                <h2 class="project-title">
+                    Black Warrant
+                </h2>
+
+                <div class="project-meta mono">
+                    SERIES / BTS<br>
+                    NETFLIX
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 03 -->
+
+        <article class="project reveal">
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2200&q=80"
+                    alt="Film set">
+
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-number mono">
+                    03
+                </div>
+
+                <h2 class="project-title">
+                    Jubilee
+                </h2>
+
+                <div class="project-meta mono">
+                    SERIES / BTS<br>
+                    AMAZON
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project reveal">
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=2200&q=85"
+                    alt="Camera and production">
+
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-number mono">
+                    04
+                </div>
+
+                <h2 class="project-title">
+                    Canali
+                </h2>
+
+                <div class="project-meta mono">
+                    CAMPAIGN / BTS<br>
+                    FASHION
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SHOWREEL
+===================================================== -->
+
+<section class="showreel">
+
+    <div class="showreel-bg"></div>
+
+    <div class="reel-button">
+        Play Reel
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services" class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="mono">
+                What We Do
+            </span>
+
+            <span class="mono">
+                Services
+            </span>
+
+        </div>
+
+
+        <div class="services-list">
+
+            <div class="service reveal">
+
+                <span class="mono">01</span>
+
+                <h2 class="service-title">
+                    Film
+                </h2>
+
+                <p class="service-description">
+                    Behind-the-scenes cinematography,
+                    EPKs, production documentation,
+                    unit photography and film stills.
+                </p>
+
+            </div>
+
+
+            <div class="service reveal">
+
+                <span class="mono">02</span>
+
+                <h2 class="service-title">
+                    Advertising
+                </h2>
+
+                <p class="service-description">
+                    Campaign photography, BTS,
+                    brand films, product films
+                    and social content.
+                </p>
+
+            </div>
+
+
+            <div class="service reveal">
+
+                <span class="mono">03</span>
+
+                <h2 class="service-title">
+                    Fashion
+                </h2>
+
+                <p class="service-description">
+                    Editorial photography,
+                    campaigns, lookbooks
+                    and visual stories.
+                </p>
+
+            </div>
+
+
+            <div class="service reveal">
+
+                <span class="mono">04</span>
+
+                <h2 class="service-title">
+                    Documentary
+                </h2>
+
+                <p class="service-description">
+                    Documentary cinematography,
+                    photography and stories
+                    rooted in real people and places.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="mono">
+                About
+            </span>
+
+            <span class="mono">
+                Studio TinTin
+            </span>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-image reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1800&q=85"
+                    alt="Studio TinTin visual">
+
+            </div>
+
+
+            <div>
+
+                <p class="about-text reveal">
+
+                    A visual production studio
+                    built around curiosity,
+                    collaboration and cinema.
+
+                </p>
+
+                <p class="about-small reveal">
+
+                    Studio TinTin works across film,
+                    advertising, fashion and documentary.
+
+                    We photograph what happens in front
+                    of the camera — and everything that
+                    happens behind it.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CLIENTS
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="mono">
+                Selected Credits
+            </span>
+
+            <span class="mono">
+                Collaborations
+            </span>
+
+        </div>
+
+
+        <div class="clients">
+
+            <div class="client">
+                Netflix
+            </div>
+
+            <div class="client">
+                Amazon Prime Video
+            </div>
+
+            <div class="client">
+                A24
+            </div>
+
+            <div class="client">
+                Canali
+            </div>
+
+            <div class="client">
+                Applause Entertainment
+            </div>
+
+            <div class="client">
+                Harkat
+            </div>
+
+            <div class="client">
+                Omongo
+            </div>
+
+            <div class="client">
+                Ember
+            </div>
+
+            <div class="client">
+                Independent Film
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact" class="contact section">
+
+    <div class="container">
+
+        <span class="mono">
+            Have a project?
+        </span>
+
+        <h2 class="contact-title">
+            Let's<br>
+            Make<br>
+            Something.
+        </h2>
+
+        <a
+            href="mailto:hello@studiotintin.com"
+            class="contact-email">
+
+            hello@studiotintin.com
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-inner">
+
+            <span class="mono">
+                © 2026 Studio TinTin
+            </span>
+
+            <div class="socials">
+
+                <a
+                    href="#"
+                    class="mono">
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    class="mono">
+                    Vimeo
+                </a>
+
+                <a
+                    href="#"
+                    class="mono">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+
+});
+
+
+document.querySelectorAll("a, .project-image, .reel-button")
+.forEach(element => {
+
+    element.addEventListener("mouseenter", () => {
+        cursor.classList.add("large");
+    });
+
+    element.addEventListener("mouseleave", () => {
+        cursor.classList.remove("large");
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+
+document.querySelectorAll(".reveal")
+.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   NAVIGATION SCROLL EFFECT
+========================================================= */
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 100) {
+
+        document.querySelector("nav").style.opacity = "0.7";
+
+    } else {
+
+        document.querySelector("nav").style.opacity = "1";
+
+    }
+
+    lastScroll = currentScroll;
+
+});
+
+</script>
+
+</body>
+</html>
