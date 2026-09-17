@@ -53,11 +53,17 @@ nav{backdrop-filter:blur(0);transition:padding .35s ease,background .35s ease,ba
   object-fit:contain;
   object-position:center;
 }
+
+.hero-project{position:absolute;z-index:2;right:4vw;bottom:55px;display:grid;gap:8px;text-align:right;max-width:360px;pointer-events:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.hero-project strong{font-size:clamp(22px,3vw,42px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;font-weight:600}
+.hero-project span:last-child{color:#aaa}
+.hero-project.changing{opacity:0;transform:translateY(10px)}
+@media(max-width:760px){.hero-project{right:5vw;bottom:150px;max-width:75vw}.hero-project strong{font-size:25px}}
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
 <nav><a class="logo" href="#">STUDIO TINTIN</a><div class="nav"><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#contact">CONTACT</a></div></nav>
-<header class="hero"><div class="hero-media"></div><div class="hero-media hero-media-next"></div><div class="hero-grid"><div class="mono kicker">PRANAV CHANDANE · MUMBAI / INDIA</div><h1><span>Studio</span><span>TinTin</span></h1><div class="hero-foot"><p class="hero-copy">Cinematographer · Director · Creative Producer<br>Visual storytelling across feature films, web series, advertising campaigns and large-scale live events.</p><div class="scroll mono"><i></i> SCROLL TO EXPLORE</div></div></div></header>
+<header class="hero"><div class="hero-media"></div><div class="hero-media hero-media-next"></div><div class="hero-project"><span class="mono" id="heroProjectNo">01 / 11</span><strong id="heroProjectTitle">KOHRRA S2</strong><span class="mono" id="heroProjectRole">NETFLIX · BTS / EPK</span></div><div class="hero-grid"><div class="mono kicker">PRANAV CHANDANE · MUMBAI / INDIA</div><h1><span>Studio</span><span>TinTin</span></h1><div class="hero-foot"><p class="hero-copy">Cinematographer · Director · Creative Producer<br>Visual storytelling across feature films, web series, advertising campaigns and large-scale live events.</p><div class="scroll mono"><i></i> SCROLL TO EXPLORE</div></div></div></header>
 <section class="intro block"><div class="wrap"><p class="reveal">Turning the filmmaking process into <em>visual stories</em> — from the first frame on set to the final piece of the campaign.</p></div></section>
 <section id="work" class="block"><div class="wrap"><div class="head mono"><span>SELECTED FILM & SERIES</span><span>01 — 08</span></div>
 <article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="ctrl.jpg"><div class="work-image"><img src="ctrl.jpg" alt="Kohrra Season 2 portfolio image"></div><div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div></article>
@@ -85,7 +91,7 @@ nav{backdrop-filter:blur(0);transition:padding .35s ease,background .35s ease,ba
 <div class="modal" id="modal"><button class="close" aria-label="Close">×</button><div class="modal-inner"><div class="mono" id="mRole"></div><h2 id="mTitle"></h2><p id="mText"></p><div class="modal-video" id="mVideo"></div><div class="links" id="mLinks"></div><img class="modal-img" id="mImg" alt=""></div></div>
 <script>
 const modal=document.getElementById('modal'),mTitle=document.getElementById('mTitle'),mRole=document.getElementById('mRole'),mText=document.getElementById('mText'),mImg=document.getElementById('mImg'),mLinks=document.getElementById('mLinks'),mVideo=document.getElementById('mVideo');
-const cursor=document.querySelector('.cursor'),dot=document.querySelector('.cursor-dot'),progress=document.querySelector('.progress'),nav=document.querySelector('nav'),heroMedia=document.querySelector('.hero-media:not(.hero-media-next)'),heroMediaNext=document.querySelector('.hero-media-next'),heroTitle=document.querySelector('.hero h1');
+const cursor=document.querySelector('.cursor'),dot=document.querySelector('.cursor-dot'),progress=document.querySelector('.progress'),nav=document.querySelector('nav'),heroMedia=document.querySelector('.hero-media:not(.hero-media-next)'),heroMediaNext=document.querySelector('.hero-media-next'),heroTitle=document.querySelector('.hero h1'),heroProject=document.querySelector('.hero-project'),heroProjectNo=document.getElementById('heroProjectNo'),heroProjectTitle=document.getElementById('heroProjectTitle'),heroProjectRole=document.getElementById('heroProjectRole');
 
 /* project modal */
 function videoEmbed(url){if(!url)return '';try{const u=new URL(url);if(u.hostname.includes('youtube.com')){let id=u.searchParams.get('v');if(!id&&u.pathname.startsWith('/shorts/'))id=u.pathname.split('/')[2];if(id)return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`; }if(u.hostname.includes('youtu.be')){const id=u.pathname.slice(1);if(id)return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`; }if(u.hostname.includes('instagram.com')){const m=u.pathname.match(/\/(reel|p|tv)\/([^\/]+)/);if(m)return `https://www.instagram.com/${m[1]}/${m[2]}/embed/?autoplay=1`;}}catch(e){}return ''}
@@ -102,22 +108,50 @@ let ticking=false;function onScroll(){if(ticking)return;requestAnimationFrame(()
 if(matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{dot.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;cursor.style.opacity=1});document.querySelectorAll('a,button,.work-item,.credit,.service').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));el.addEventListener('mousedown',()=>cursor.classList.add('active'));el.addEventListener('mouseup',()=>cursor.classList.remove('active'))})}
 
 /* hero slideshow */
-const heroImages=['ctrl.jpg','mini-joytown.jpg','kohrra.jpg','black-warrant.jpg','jubilee.jpg','mumbai-diaries-1.jpg','sarfira-1.jpg','dhoni-1.jpg','zubaan-1.jpg','myntra.jpg','mahindra.jpg','canali.jpg','peasant.jpg'];
+const heroSlides=[
+  {img:'ctrl.jpg',title:'KOHRRA S2',role:'NETFLIX · BTS / EPK'},
+  {img:'mini-joytown.jpg',title:'MINI INDIA',role:'JOY-TOWN · EVENT FILMS'},
+  {img:'kohrra.jpg',title:'CTRL',role:'NETFLIX · BTS / MARKETING'},
+  {img:'black-warrant.jpg',title:'BLACK WARRANT',role:'NETFLIX · BTS / MARKETING'},
+  {img:'jubilee.jpg',title:'JUBILEE',role:'AMAZON PRIME · BTS'},
+  {img:'mumbai-diaries-1.jpg',title:'MUMBAI DIARIES S2',role:'AMAZON PRIME · BTS'},
+  {img:'sarfira-1.jpg',title:'SARFIRA',role:'2024 · BTS'},
+  {img:'dhoni-1.jpg',title:'M.S. DHONI',role:'FILM · BTS'},
+  {img:'zubaan-1.jpg',title:'ZUBAAN',role:'2016 · BTS'},
+  {img:'myntra.jpg',title:'MYNTRA',role:'BTS · CONTENT'},
+  {img:'mahindra.jpg',title:'MAHINDRA BLUES',role:'LIVE EVENT · SOCIAL'},
+  {img:'canali.jpg',title:'CANALI × ALI FAZAL',role:'DIRECTED & SHOT · FALL / WINTER 2025'},
+  {img:'peasant.jpg',title:'THE PEASANT',role:'A24 · BTS / EPK / MARKETING'}
+];
 let heroIndex=0,heroShowingFirst=true;
-heroImages.slice(1).forEach(src=>{const im=new Image();im.src=src});
+heroSlides.slice(1).forEach(slide=>{const im=new Image();im.src=slide.img});
+
+function updateHeroLabel(slide,index){
+  heroProjectNo.textContent=String(index+1).padStart(2,'0')+' / '+heroSlides.length;
+  heroProjectTitle.textContent=slide.title;
+  heroProjectRole.textContent=slide.role;
+}
+
 setInterval(()=>{
-  heroIndex=(heroIndex+1)%heroImages.length;
-  const nextUrl=`linear-gradient(180deg,rgba(0,0,0,.08) 15%,rgba(0,0,0,.72) 100%),url('${heroImages[heroIndex]}')`;
-  if(heroShowingFirst){
-    heroMediaNext.style.backgroundImage=nextUrl;
-    heroMediaNext.style.opacity='1';
-    heroMedia.style.opacity='0';
-  }else{
-    heroMedia.style.backgroundImage=nextUrl;
-    heroMedia.style.opacity='1';
-    heroMediaNext.style.opacity='0';
-  }
-  heroShowingFirst=!heroShowingFirst;
+  heroIndex=(heroIndex+1)%heroSlides.length;
+  const slide=heroSlides[heroIndex];
+  heroProject.classList.add('changing');
+
+  setTimeout(()=>{
+    const nextUrl=`linear-gradient(180deg,rgba(0,0,0,.08) 15%,rgba(0,0,0,.72) 100%),url('${slide.img}')`;
+    if(heroShowingFirst){
+      heroMediaNext.style.backgroundImage=nextUrl;
+      heroMediaNext.style.opacity='1';
+      heroMedia.style.opacity='0';
+    }else{
+      heroMedia.style.backgroundImage=nextUrl;
+      heroMedia.style.opacity='1';
+      heroMediaNext.style.opacity='0';
+    }
+    heroShowingFirst=!heroShowingFirst;
+    updateHeroLabel(slide,heroIndex);
+    heroProject.classList.remove('changing');
+  },550);
 },4500);
 
 /* active section navigation */
