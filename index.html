@@ -59,6 +59,38 @@ nav{backdrop-filter:blur(0);transition:padding .35s ease,background .35s ease,ba
 .hero-project span:last-child{color:#aaa}
 .hero-project.changing{opacity:0;transform:translateY(10px)}
 @media(max-width:760px){.hero-project{right:5vw;bottom:150px;max-width:75vw}.hero-project strong{font-size:25px}}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:760px){
+html,body{width:100%;overflow-x:hidden}
+nav{height:64px;padding:18px 20px}.logo{font-size:14px}.nav{gap:16px}.nav a{font-size:8px;letter-spacing:.06em}
+.hero{min-height:100svh;height:100svh}.hero-media,.hero-media-next{background-position:center center}.hero-grid{padding:0 20px 28px}
+.hero h1{font-size:20.5vw;line-height:.82;letter-spacing:-.075em}.kicker{font-size:8px;margin-bottom:18px}.hero-foot{margin-top:28px}
+.hero-copy{font-size:11px;line-height:1.55;max-width:290px}.scroll{font-size:8px;margin-top:22px}.scroll i{width:35px}
+.hero-project{right:20px;bottom:125px;max-width:62vw;gap:6px}.hero-project strong{font-size:20px;line-height:.92}.hero-project span:last-child{font-size:8px}
+section.block{padding:72px 0}.wrap{width:calc(100% - 40px)}.head{padding-top:11px;margin-bottom:34px}.head span{font-size:8px}
+.intro{min-height:72svh}.intro p{font-size:34px;line-height:1;letter-spacing:-.055em}
+.work-item,.work-item:nth-child(even),.work-item:nth-child(3n){width:100%;margin-left:0;margin-bottom:72px}
+.work-image{width:100%;min-height:0}.work-image img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.work-meta{grid-template-columns:28px 1fr;gap:12px;padding-top:12px;margin-top:10px}.work-title{font-size:34px;line-height:.92}
+.work-info{grid-column:2;text-align:left;font-size:8px;line-height:1.45}
+.two-col{grid-template-columns:1fr;gap:48px}.about-photo{width:100%}.about-photo img{width:100%;height:auto;aspect-ratio:auto;object-fit:cover}
+.about-copy h2{font-size:40px;line-height:.94;margin-bottom:28px}.about-copy p{font-size:12px;line-height:1.7}
+.service{grid-template-columns:28px 1fr;gap:12px;padding:25px 0}.service h3{font-size:32px;line-height:.95}
+.service p{grid-column:2;font-size:12px;line-height:1.65;margin-top:4px}
+.credits{grid-template-columns:1fr}.credit,.credit:nth-child(even){border-left:0;padding:20px 0;font-size:18px}
+.peasant-card{height:62svh;min-height:400px;padding:25px}.peasant-card h3{font-size:18vw}.peasant-card:before{font-size:35vw}.peasant-card:after{font-size:24vw}
+.contact{min-height:72svh}.contact h2{font-size:20vw;margin:20px 0 42px}.email{font-size:17px;word-break:break-word}
+footer{padding:20px 0}.foot{display:block}.social{gap:18px;margin-top:14px}
+.modal{padding:78px 20px 35px}.modal h2{font-size:48px;line-height:.84;margin:14px 0 24px}.modal p{font-size:12px;line-height:1.7}
+.modal .modal-img{margin-top:30px;max-height:none;height:auto;object-fit:contain}.modal-video{margin-top:28px}.close{right:18px;top:16px;font-size:30px}
+.grain{opacity:.025}.work-image:after{display:none}
+}
+@media(max-width:380px){
+.nav{gap:11px}.nav a{font-size:7px}.hero h1{font-size:20vw}.hero-project{bottom:132px}.hero-project strong{font-size:18px}
+.intro p{font-size:30px}.work-title{font-size:30px}
+}
+
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
