@@ -8,330 +8,57 @@
 <meta property="og:title" content="Studio TinTin — Pranav Chandane">
 <meta property="og:description" content="Cinematography · Direction · Creative Production">
 <title>Studio TinTin — Pranav Chandane</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-  --bg:#090909; --fg:#f4f2ed; --muted:#8e8e88; --line:rgba(244,242,237,.16);
-  --serif: Georgia, 'Times New Roman', serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:Manrope,Arial,sans-serif}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-img{display:block;width:100%}
-::selection{background:#f4f2ed;color:#090909}
-.mono{font:300 10px/1.2 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
-.wrap{width:min(92vw,1500px);margin:auto}
-nav{position:fixed;z-index:50;top:0;left:0;width:100%;padding:24px 4vw;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}
-.logo{font-weight:800;letter-spacing:-.05em;font-size:17px}
-.nav{display:flex;gap:28px}
-.nav a{font-size:10px}
-.nav a:hover{text-decoration:underline;text-underline-offset:6px}
-
-.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
-.hero-media{position:absolute;inset:0;background:
-linear-gradient(180deg,rgba(0,0,0,.08) 15%,rgba(0,0,0,.72) 100%),
-url('ctrl.jpg') center/cover no-repeat;transform:scale(1.04);animation:heroIn 1.8s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes heroIn{to{transform:scale(1)}}
-.hero-grid{position:relative;width:100%;padding:0 4vw 55px}
-.kicker{margin-bottom:24px}
-.hero h1{font-size:clamp(76px,15vw,220px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0;font-weight:700}
-.hero h1 span{display:block}
-.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:58px}
-.hero-copy{max-width:470px;font-size:14px;line-height:1.7;color:#d2d0ca}
-.scroll{display:flex;align-items:center;gap:12px}.scroll i{display:block;width:55px;height:1px;background:#fff}
-
-.intro{min-height:85vh;display:flex;align-items:center}
-.intro p{max-width:1100px;font-size:clamp(38px,6vw,86px);line-height:.99;letter-spacing:-.065em;margin:0}
-.intro em{font-family:var(--serif);font-weight:400;color:#777;font-style:italic}
-
-section.block{padding:130px 0}
-.head{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:15px;margin-bottom:65px}
-
-.work-item{margin-bottom:135px}
-.work-image{position:relative;overflow:hidden;background:#141414}
-.work-image img{aspect-ratio:16/9;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);filter:saturate(.88)}
-.work-item:hover .work-image img{transform:scale(1.035);filter:saturate(1)}
-.work-meta{display:grid;grid-template-columns:55px 1fr auto;gap:24px;border-top:1px solid var(--line);padding-top:16px;margin-top:13px}
-.work-title{font-size:clamp(32px,5vw,70px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}
-.work-info{color:#999;line-height:1.7;text-align:right}
-.work-item:nth-child(even){width:82%;margin-left:auto}
-.work-item:nth-child(3n){width:90%}
-
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:7vw}
-.about-photo{overflow:hidden}.about-photo img{height:78vh;object-fit:cover}
-.about-copy{align-self:center}
-.about-copy h2{font-size:clamp(38px,5vw,76px);line-height:.94;letter-spacing:-.06em;margin:0 0 38px}
-.about-copy p{max-width:540px;color:#aaa;line-height:1.8;font-size:14px}
-
-.services{border-top:1px solid var(--line)}
-.service{display:grid;grid-template-columns:60px 1fr 1fr;gap:25px;padding:35px 0;border-bottom:1px solid var(--line)}
-.service h3{margin:0;font-size:clamp(30px,4vw,58px);letter-spacing:-.05em;text-transform:uppercase;font-weight:500}
-.service p{margin:0;color:#999;line-height:1.7;max-width:430px}
-
-.credits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.credit{padding:28px 18px;border-bottom:1px solid var(--line);font-size:20px;letter-spacing:-.03em}
-.credit:nth-child(3n+2),.credit:nth-child(3n+3){border-left:1px solid var(--line)}
-
-.contact{min-height:78vh;display:flex;align-items:center}
-.contact h2{font-size:clamp(70px,12vw,175px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:25px 0 65px}
-.email{font-size:clamp(21px,3vw,40px);border-bottom:1px solid #777;padding-bottom:8px}
-.email:hover{border-color:#fff}
-
-footer{border-top:1px solid var(--line);padding:25px 0}
-.foot{display:flex;justify-content:space-between;gap:20px}
-.social{display:flex;gap:25px}
-
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:none}
-
-.modal{position:fixed;inset:0;z-index:100;background:rgba(7,7,7,.96);display:none;overflow:auto;padding:8vh 5vw}
-.modal.open{display:block}
-.modal-inner{width:min(1100px,100%);margin:auto}
-.close{position:fixed;right:4vw;top:25px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}
-.modal h2{font-size:clamp(48px,9vw,120px);line-height:.8;letter-spacing:-.075em;text-transform:uppercase;margin:20px 0 35px}
-.modal p{max-width:760px;color:#aaa;line-height:1.8;font-size:15px}
-.modal .modal-img{margin-top:45px;max-height:70vh;object-fit:cover}
-.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
-.links a{border:1px solid #444;padding:11px 14px;font:300 10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
-.links a:hover{background:#fff;color:#000}
-
-@media(max-width:760px){
- nav{padding:20px 5vw}.nav{gap:14px}.nav a{font-size:9px}
- .hero-grid{padding:0 5vw 35px}.hero h1{font-size:22vw}
- .hero-foot{display:block;margin-top:35px}.scroll{margin-top:28px}
- section.block{padding:90px 0}.head{margin-bottom:45px}
- .intro{min-height:70vh}.intro p{font-size:35px}
- .work-item,.work-item:nth-child(even),.work-item:nth-child(3n){width:100%;margin-left:0;margin-bottom:90px}
- .work-meta{grid-template-columns:32px 1fr}.work-info{grid-column:2;text-align:left}
- .two-col{grid-template-columns:1fr;gap:45px}.about-photo img{height:65vh}
- .service{grid-template-columns:35px 1fr}.service p{grid-column:2}
- .credits{grid-template-columns:1fr 1fr}.credit:nth-child(3n+2),.credit:nth-child(3n+3){border-left:0}.credit:nth-child(even){border-left:1px solid var(--line)}
- .contact{min-height:70vh}.contact h2{font-size:21vw}.email{font-size:19px}
- .foot{display:block}.social{margin-top:18px}
-}
+:root{--bg:#090909;--fg:#f4f2ed;--muted:#8e8e88;--line:rgba(244,242,237,.16);--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:var(--bg);color:var(--fg);font-family:Manrope,Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%}::selection{background:#f4f2ed;color:#090909}.mono{font:300 10px/1.2 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}.wrap{width:min(92vw,1500px);margin:auto}
+nav{position:fixed;z-index:50;top:0;left:0;width:100%;padding:24px 4vw;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}.logo{font-weight:800;letter-spacing:-.05em;font-size:17px}.nav{display:flex;gap:28px}.nav a{font-size:10px}.nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}.hero-media{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 15%,rgba(0,0,0,.72) 100%),url('ctrl.jpg') center/cover no-repeat;transform:scale(1.04);animation:heroIn 1.8s cubic-bezier(.2,.7,.2,1) forwards}@keyframes heroIn{to{transform:scale(1)}}.hero-grid{position:relative;width:100%;padding:0 4vw 55px}.kicker{margin-bottom:24px}.hero h1{font-size:clamp(76px,15vw,220px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:0;font-weight:700}.hero h1 span{display:block}.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:58px}.hero-copy{max-width:470px;font-size:14px;line-height:1.7;color:#d2d0ca}.scroll{display:flex;align-items:center;gap:12px}.scroll i{display:block;width:55px;height:1px;background:#fff}
+.intro{min-height:85vh;display:flex;align-items:center}.intro p{max-width:1100px;font-size:clamp(38px,6vw,86px);line-height:.99;letter-spacing:-.065em;margin:0}.intro em{font-family:var(--serif);font-weight:400;color:#777;font-style:italic}
+section.block{padding:130px 0}.head{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:15px;margin-bottom:65px}.work-item{margin-bottom:135px}.work-image{position:relative;overflow:hidden;background:#141414}.work-image img{aspect-ratio:16/9;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);filter:saturate(.88)}.work-item:hover .work-image img{transform:scale(1.035);filter:saturate(1)}.work-meta{display:grid;grid-template-columns:55px 1fr auto;gap:24px;border-top:1px solid var(--line);padding-top:16px;margin-top:13px}.work-title{font-size:clamp(32px,5vw,70px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}.work-info{color:#999;line-height:1.7;text-align:right}.work-item:nth-child(even){width:82%;margin-left:auto}.work-item:nth-child(3n){width:90%}
+.text-project{min-height:430px;background:#111;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;padding:7vw;position:relative;overflow:hidden}.text-project:before{content:'CANALI';position:absolute;right:-3vw;bottom:-3vw;font-size:18vw;line-height:.7;font-weight:800;letter-spacing:-.08em;color:#1b1b1b}.text-project .mono,.text-project h3,.text-project p{position:relative;z-index:1}.text-project h3{font-size:clamp(44px,7vw,100px);line-height:.82;letter-spacing:-.07em;margin:18px 0 25px}.text-project p{max-width:520px;color:#999;line-height:1.7;margin:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:7vw}.about-photo{overflow:hidden}.about-photo img{height:78vh;object-fit:cover}.about-copy{align-self:center}.about-copy h2{font-size:clamp(38px,5vw,76px);line-height:.94;letter-spacing:-.06em;margin:0 0 38px}.about-copy p{max-width:540px;color:#aaa;line-height:1.8;font-size:14px}
+.services{border-top:1px solid var(--line)}.service{display:grid;grid-template-columns:60px 1fr 1fr;gap:25px;padding:35px 0;border-bottom:1px solid var(--line)}.service h3{margin:0;font-size:clamp(30px,4vw,58px);letter-spacing:-.05em;text-transform:uppercase;font-weight:500}.service p{margin:0;color:#999;line-height:1.7;max-width:430px}
+.credits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.credit{padding:28px 18px;border-bottom:1px solid var(--line);font-size:20px;letter-spacing:-.03em}.credit:nth-child(3n+2),.credit:nth-child(3n+3){border-left:1px solid var(--line)}
+.contact{min-height:78vh;display:flex;align-items:center}.contact h2{font-size:clamp(70px,12vw,175px);line-height:.78;letter-spacing:-.085em;text-transform:uppercase;margin:25px 0 65px}.email{font-size:clamp(21px,3vw,40px);border-bottom:1px solid #777;padding-bottom:8px}.email:hover{border-color:#fff}footer{border-top:1px solid var(--line);padding:25px 0}.foot{display:flex;justify-content:space-between;gap:20px}.social{display:flex;gap:25px}.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(7,7,7,.96);display:none;overflow:auto;padding:8vh 5vw}.modal.open{display:block}.modal-inner{width:min(1100px,100%);margin:auto}.close{position:fixed;right:4vw;top:25px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}.modal h2{font-size:clamp(48px,9vw,120px);line-height:.8;letter-spacing:-.075em;text-transform:uppercase;margin:20px 0 35px}.modal p{max-width:760px;color:#aaa;line-height:1.8;font-size:15px}.modal .modal-img{margin-top:45px;max-height:70vh;object-fit:cover}.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.links a{border:1px solid #444;padding:11px 14px;font:300 10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.links a:hover{background:#fff;color:#000}
+@media(max-width:760px){nav{padding:20px 5vw}.nav{gap:14px}.nav a{font-size:9px}.hero-grid{padding:0 5vw 35px}.hero h1{font-size:22vw}.hero-foot{display:block;margin-top:35px}.scroll{margin-top:28px}section.block{padding:90px 0}.head{margin-bottom:45px}.intro{min-height:70vh}.intro p{font-size:35px}.work-item,.work-item:nth-child(even),.work-item:nth-child(3n){width:100%;margin-left:0;margin-bottom:90px}.work-meta{grid-template-columns:32px 1fr}.work-info{grid-column:2;text-align:left}.two-col{grid-template-columns:1fr;gap:45px}.about-photo img{height:65vh}.service{grid-template-columns:35px 1fr}.service p{grid-column:2}.credits{grid-template-columns:1fr 1fr}.credit:nth-child(3n+2),.credit:nth-child(3n+3){border-left:0}.credit:nth-child(even){border-left:1px solid var(--line)}.contact{min-height:70vh}.contact h2{font-size:21vw}.email{font-size:19px}.foot{display:block}.social{margin-top:18px}.text-project{min-height:360px;padding:9vw}.text-project h3{font-size:16vw}.text-project:before{font-size:28vw}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.hero-media{animation:none}}
 </style>
 </head>
-
 <body>
-<nav>
-  <a class="logo" href="#">STUDIO TINTIN</a>
-  <div class="nav">
-    <a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#contact">CONTACT</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-media"></div>
-  <div class="hero-grid">
-    <div class="mono kicker">PRANAV CHANDANE · MUMBAI / INDIA</div>
-    <h1><span>Studio</span><span>TinTin</span></h1>
-    <div class="hero-foot">
-      <p class="hero-copy">Cinematographer · Director · Creative Producer<br>
-      Visual storytelling across feature films, web series, advertising campaigns and large-scale live events.</p>
-      <div class="scroll mono"><i></i> SCROLL TO EXPLORE</div>
-    </div>
-  </div>
-</header>
-
-<section class="intro block">
-  <div class="wrap">
-    <p class="reveal">Turning the filmmaking process into <em>visual stories</em> — from the first frame on set to the final piece of the campaign.</p>
-  </div>
-</section>
-
-<section id="work" class="block">
-  <div class="wrap">
-    <div class="head mono"><span>SELECTED FILM & SERIES</span><span>01 — 08</span></div>
-
-    <article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="kohrra.jpg">
-      <div class="work-image"><img src="kohrra.jpg" alt="Kohrra Season 2 portfolio image"></div>
-      <div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="CTRL" data-role="BTS Cinematographer · BTS Director" data-text="Netflix movie directed by Vikramaditya Motwane. BTS cinematography and direction, capturing the creative process, on-set moments and making of the film through an engaging visual storytelling approach." data-img="ctrl.jpg">
-      <div class="work-image"><img src="ctrl.jpg" alt="CTRL portfolio image"></div>
-      <div class="work-meta"><span class="mono">02</span><strong class="work-title">CTRL</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="Black Warrant" data-role="BTS Cinematographer · Director" data-text="Netflix web series. BTS cinematography and direction focused on key production moments, the intensity of action, performances, craftsmanship and the dynamic working environment on set." data-img="black-warrant.jpg">
-      <div class="work-image"><img src="black-warrant.jpg" alt="Black Warrant portfolio image"></div>
-      <div class="work-meta"><span class="mono">03</span><strong class="work-title">BLACK WARRANT</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="Jubilee" data-role="BTS Cinematography" data-text="Behind-the-scenes work documenting the creative process and key moments during production, creating marketing content for social media." data-img="jubilee.jpg">
-      <div class="work-image"><img src="jubilee.jpg" alt="Jubilee portfolio image"></div>
-      <div class="work-meta"><span class="mono">04</span><strong class="work-title">JUBILEE</strong><span class="work-info mono">AMAZON PRIME<br>BTS</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="Mumbai Diaries Season 2" data-role="BTS Cinematography" data-text="Documenting the production process and capturing candid moments to provide an insider's view of how the show was made, with high-quality content complementing the main project." data-img="mumbai-diaries-1.jpg">
-      <div class="work-image"><img src="mumbai-diaries-1.jpg" alt="Mumbai Diaries Season 2 portfolio image"></div>
-      <div class="work-meta"><span class="mono">05</span><strong class="work-title">MUMBAI DIARIES S2</strong><span class="work-info mono">AMAZON PRIME<br>BTS</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="Sarfira 2024" data-role="BTS Cinematography" data-text="Captured the creative and technical process on set, documenting key moments and building a visual narrative of the production while working closely with the director and crew." data-img="sarfira-1.jpg">
-      <div class="work-image"><img src="sarfira-1.jpg" alt="Sarfira 2024 portfolio image"></div>
-      <div class="work-meta"><span class="mono">06</span><strong class="work-title">SARFIRA</strong><span class="work-info mono">2024<br>BTS</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="M.S. Dhoni — The Untold Story" data-role="BTS Cinematography" data-text="Documented the making of the biographical film, capturing candid moments, key production processes and the collaborative efforts of cast and crew." data-img="dhoni-1.jpg">
-      <div class="work-image"><img src="dhoni-1.jpg" alt="M.S. Dhoni The Untold Story portfolio image"></div>
-      <div class="work-meta"><span class="mono">07</span><strong class="work-title">M.S. DHONI</strong><span class="work-info mono">FILM<br>BTS</span></div>
-    </article>
-
-    <article class="work-item reveal" data-title="Zubaan" data-role="BTS Cinematographer" data-text="Behind-the-scenes cinematography for the musical drama Zubaan, documenting the production process, creative journey and visual style while contributing to promotional content and special features." data-img="zubaan-1.jpg">
-      <div class="work-image"><img src="zubaan-1.jpg" alt="Zubaan portfolio image"></div>
-      <div class="work-meta"><span class="mono">08</span><strong class="work-title">ZUBAAN</strong><span class="work-info mono">2016<br>BTS</span></div>
-    </article>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="head mono"><span>COMMERCIAL / LIVE</span><span>09 — 11</span></div>
-    <div class="two-col">
-      <article class="work-item reveal" data-title="MINI India — Joy-Town" data-role="Corporate / Event Films" data-text="Videos created for BMW MINI Joy-Town, an event celebrating the MINI brand's culture and community through immersive experiences." data-img="mini-myntra.jpg" data-links="MINI Reel 01|https://www.instagram.com/reel/Cn_J4yKOCAL/|MINI Reel 02|https://www.instagram.com/reel/Cn1pkxMLvGK/|MINI Reel 03|https://www.instagram.com/reel/CnoOuQzIFPd/|MINI Reel 04|https://www.instagram.com/reel/CnJtuLgIpKd/">
-        <div class="work-image"><img src="mini-myntra.jpg" alt="MINI India Joy-Town portfolio image"></div>
-        <div class="work-meta"><span class="mono">09</span><strong class="work-title">MINI INDIA</strong><span class="work-info mono">JOY-TOWN<br>EVENT FILMS</span></div>
-      </article>
-
-      <article class="work-item reveal" data-title="Myntra" data-role="Behind-the-Scenes" data-text="Behind-the-scenes content created for Myntra." data-img="myntra.jpg" data-links="VIEW REEL|https://www.instagram.com/reel/CyNvHb0RWI0/">
-        <div class="work-image"><img src="myntra.jpg" alt="Myntra BTS portfolio image"></div>
-        <div class="work-meta"><span class="mono">10</span><strong class="work-title">MYNTRA</strong><span class="work-info mono">BTS<br>CONTENT</span></div>
-      </article>
-    </div>
-
-    <article class="work-item reveal" data-title="Mahindra Blues Festival" data-role="Live Event · Social Content" data-text="The project was focused on social media: the entire event was shot live for social media streams and updates." data-img="mahindra.jpg">
-      <div class="work-image"><img src="mahindra.jpg" alt="Mahindra Blues Festival portfolio image"></div>
-      <div class="work-meta"><span class="mono">11</span><strong class="work-title">MAHINDRA BLUES</strong><span class="work-info mono">LIVE EVENT<br>SOCIAL</span></div>
-    </article>
-  </div>
-</section>
-
-<section id="about" class="block">
-  <div class="wrap">
-    <div class="head mono"><span>ABOUT</span><span>PRANAV CHANDANE</span></div>
-    <div class="two-col">
-      <div class="about-photo reveal"><img src="ctrl.jpg" alt="Studio TinTin portfolio image"></div>
-      <div class="about-copy reveal">
-        <h2>BEHIND THE IMAGE.<br>INSIDE THE STORY.</h2>
-        <p>Pranav Chandane is a cinematographer, director and creative producer specialising in feature films, web series, advertising campaigns and large-scale live events.</p>
-        <p>His work spans BTS cinematography, still photography, Electronic Press Kits (EPKs), marketing films and digital campaign content — transforming the filmmaking process into compelling visual stories.</p>
-        <p>He works across complex productions involving multiple teams, cameras and fast-paced shooting environments, from intimate creative moments and interviews to large-scale action sequences and live events.</p>
-        <div class="links"><a href="pranav-chandane-portfolio.pdf" target="_blank">VIEW FULL PORTFOLIO PDF</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="block">
-  <div class="wrap">
-    <div class="head mono"><span>CAPABILITIES</span><span>WHAT WE DO</span></div>
-    <div class="services">
-      <div class="service reveal"><span class="mono">01</span><h3>FILM</h3><p>BTS cinematography, EPKs, production documentation, film stills, interviews and marketing content.</p></div>
-      <div class="service reveal"><span class="mono">02</span><h3>ADVERTISING</h3><p>Campaign content, behind-the-scenes films, brand storytelling and digital campaign assets.</p></div>
-      <div class="service reveal"><span class="mono">03</span><h3>CREATIVE DIRECTION</h3><p>Creative direction and execution for EPKs, BTS narratives and visual marketing pieces.</p></div>
-      <div class="service reveal"><span class="mono">04</span><h3>LIVE / CULTURE</h3><p>Live event coverage and fast-turnaround social content for large-scale experiences.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="head mono"><span>SELECTED CREDITS</span><span>COLLABORATIONS</span></div>
-    <div class="credits">
-      <div class="credit">Netflix</div><div class="credit">Amazon Prime Video</div><div class="credit">A24</div>
-      <div class="credit">Canali</div><div class="credit">Applause Entertainment</div><div class="credit">Harkat</div>
-      <div class="credit">MINI India</div><div class="credit">Myntra</div><div class="credit">Mahindra Blues Festival</div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="head mono"><span>UPCOMING</span><span>2027</span></div>
-    <div class="two-col">
-      <div class="reveal"><img src="sarfira-2.jpg" alt="Portfolio visual"></div>
-      <div class="about-copy reveal">
-        <h2>THE<br>PEASANT</h2>
-        <p>Feature film produced by A24. The portfolio describes Pranav's role as BTS cinematographer while leading the creative direction and execution of EPK and behind-the-scenes content, including filmmaker and cast interviews, the filmmaking process and large-scale action sequences.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="mono">HAVE A PROJECT?</div>
-    <h2>LET'S<br>MAKE<br>SOMETHING.</h2>
-    <a class="email" href="mailto:work.pranavchandane@gmail.com">work.pranavchandane@gmail.com</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap foot">
-    <span class="mono">© 2026 STUDIO TINTIN · PRANAV CHANDANE</span>
-    <div class="social">
-      <a class="mono" href="mailto:work.pranavchandane@gmail.com">EMAIL</a>
-      <a class="mono" href="pranav-chandane-portfolio.pdf" target="_blank">PORTFOLIO PDF</a>
-    </div>
-  </div>
-</footer>
-
-<div class="modal" id="modal">
-  <button class="close" aria-label="Close">×</button>
-  <div class="modal-inner">
-    <div class="mono" id="mRole"></div>
-    <h2 id="mTitle"></h2>
-    <p id="mText"></p>
-    <div class="links" id="mLinks"></div>
-    <img class="modal-img" id="mImg" alt="">
-  </div>
+<nav><a class="logo" href="#">STUDIO TINTIN</a><div class="nav"><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#contact">CONTACT</a></div></nav>
+<header class="hero"><div class="hero-media"></div><div class="hero-grid"><div class="mono kicker">PRANAV CHANDANE · MUMBAI / INDIA</div><h1><span>Studio</span><span>TinTin</span></h1><div class="hero-foot"><p class="hero-copy">Cinematographer · Director · Creative Producer<br>Visual storytelling across feature films, web series, advertising campaigns and large-scale live events.</p><div class="scroll mono"><i></i> SCROLL TO EXPLORE</div></div></div></header>
+<section class="intro block"><div class="wrap"><p class="reveal">Turning the filmmaking process into <em>visual stories</em> — from the first frame on set to the final piece of the campaign.</p></div></section>
+<section id="work" class="block"><div class="wrap"><div class="head mono"><span>SELECTED FILM & SERIES</span><span>01 — 08</span></div>
+<article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="ctrl.jpg"><div class="work-image"><img src="ctrl.jpg" alt="Kohrra Season 2 portfolio image"></div><div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div></article>
+<article class="work-item reveal" data-title="CTRL" data-role="BTS Cinematographer · BTS Director" data-text="Netflix movie directed by Vikramaditya Motwane. BTS cinematography and direction, capturing the creative process, on-set moments and making of the film through an engaging visual storytelling approach." data-img="kohrra.jpg"><div class="work-image"><img src="kohrra.jpg" alt="CTRL portfolio image"></div><div class="work-meta"><span class="mono">02</span><strong class="work-title">CTRL</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div></article>
+<article class="work-item reveal" data-title="Black Warrant" data-role="BTS Cinematographer · Director" data-text="Netflix web series. BTS cinematography and direction focused on key production moments, the intensity of action, performances, craftsmanship and the dynamic working environment on set." data-img="black-warrant.jpg"><div class="work-image"><img src="black-warrant.jpg" alt="Black Warrant portfolio image"></div><div class="work-meta"><span class="mono">03</span><strong class="work-title">BLACK WARRANT</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div></article>
+<article class="work-item reveal" data-title="Jubilee" data-role="BTS Cinematography" data-text="Behind-the-scenes work documenting the creative process and key moments during production, creating marketing content for social media." data-img="jubilee.jpg"><div class="work-image"><img src="jubilee.jpg" alt="Jubilee portfolio image"></div><div class="work-meta"><span class="mono">04</span><strong class="work-title">JUBILEE</strong><span class="work-info mono">AMAZON PRIME<br>BTS</span></div></article>
+<article class="work-item reveal" data-title="Mumbai Diaries Season 2" data-role="BTS Cinematography" data-text="Documenting the production process and capturing candid moments to provide an insider's view of how the show was made, with high-quality content complementing the main project." data-img="mumbai-diaries-1.jpg"><div class="work-image"><img src="mumbai-diaries-1.jpg" alt="Mumbai Diaries Season 2 portfolio image"></div><div class="work-meta"><span class="mono">05</span><strong class="work-title">MUMBAI DIARIES S2</strong><span class="work-info mono">AMAZON PRIME<br>BTS</span></div></article>
+<article class="work-item reveal" data-title="Sarfira 2024" data-role="BTS Cinematography" data-text="Captured the creative and technical process on set, documenting key moments and building a visual narrative of the production while working closely with the director and crew." data-img="sarfira-1.jpg"><div class="work-image"><img src="sarfira-1.jpg" alt="Sarfira 2024 portfolio image"></div><div class="work-meta"><span class="mono">06</span><strong class="work-title">SARFIRA</strong><span class="work-info mono">2024<br>BTS</span></div></article>
+<article class="work-item reveal" data-title="M.S. Dhoni — The Untold Story" data-role="BTS Cinematography" data-text="Documented the making of the biographical film, capturing candid moments, key production processes and the collaborative efforts of cast and crew." data-img="dhoni-1.jpg"><div class="work-image"><img src="dhoni-1.jpg" alt="M.S. Dhoni The Untold Story portfolio image"></div><div class="work-meta"><span class="mono">07</span><strong class="work-title">M.S. DHONI</strong><span class="work-info mono">FILM<br>BTS</span></div></article>
+<article class="work-item reveal" data-title="Zubaan" data-role="BTS Cinematographer" data-text="Behind-the-scenes cinematography for the musical drama Zubaan, documenting the production process, creative journey and visual style while contributing to promotional content and special features." data-img="zubaan-1.jpg"><div class="work-image"><img src="zubaan-1.jpg" alt="Zubaan portfolio image"></div><div class="work-meta"><span class="mono">08</span><strong class="work-title">ZUBAAN</strong><span class="work-info mono">2016<br>BTS</span></div></article>
+</div></section>
+<section class="block"><div class="wrap"><div class="head mono"><span>COMMERCIAL / LIVE</span><span>09 — 12</span></div><div class="two-col">
+<article class="work-item reveal" data-title="MINI India — Joy-Town" data-role="Corporate / Event Films" data-text="Videos created for BMW MINI Joy-Town, an event celebrating the MINI brand's culture and community through immersive experiences." data-img="mini-myntra.jpg" data-links="MINI Reel 01|https://www.instagram.com/reel/Cn_J4yKOCAL/|MINI Reel 02|https://www.instagram.com/reel/Cn1pkxMLvGK/|MINI Reel 03|https://www.instagram.com/reel/CnoOuQzIFPd/|MINI Reel 04|https://www.instagram.com/reel/CnJtuLgIpKd/"><div class="work-image"><img src="mini-myntra.jpg" alt="MINI India Joy-Town portfolio image"></div><div class="work-meta"><span class="mono">09</span><strong class="work-title">MINI INDIA</strong><span class="work-info mono">JOY-TOWN<br>EVENT FILMS</span></div></article>
+<article class="work-item reveal" data-title="Myntra" data-role="Behind-the-Scenes" data-text="Behind-the-scenes content created for Myntra." data-img="myntra.jpg" data-links="VIEW REEL|https://www.instagram.com/reel/CyNvHb0RWI0/"><div class="work-image"><img src="myntra.jpg" alt="Myntra BTS portfolio image"></div><div class="work-meta"><span class="mono">10</span><strong class="work-title">MYNTRA</strong><span class="work-info mono">BTS<br>CONTENT</span></div></article>
 </div>
-
+<article class="work-item reveal" data-title="Mahindra Blues Festival" data-role="Live Event · Social Content" data-text="The project was focused on social media: the entire event was shot live for social media streams and updates." data-img="mahindra.jpg"><div class="work-image"><img src="mahindra.jpg" alt="Mahindra Blues Festival portfolio image"></div><div class="work-meta"><span class="mono">11</span><strong class="work-title">MAHINDRA BLUES</strong><span class="work-info mono">LIVE EVENT<br>SOCIAL</span></div></article>
+<article class="work-item reveal" data-title="Canali × Ali Fazal — Fall/Winter 2025" data-role="Directed & Shot · Director · Cinematographer" data-text="Ali Fazal for Canali, Fall/Winter 2025. Directed and shot by Pranav Chandane. Made in Italy. Worn by the World." data-links="WATCH FILM|https://www.instagram.com/reel/DRzsE5IkmBZ/?stkn=MTVqOWdybHc1bHEyMg%3D%3D"><div class="text-project"><span class="mono">12 · DIRECTED & SHOT</span><h3>CANALI ×<br>ALI FAZAL</h3><p>FALL / WINTER 2025<br>MADE IN ITALY · WORN BY THE WORLD</p></div><div class="work-meta"><span class="mono">12</span><strong class="work-title">CANALI</strong><span class="work-info mono">ALI FAZAL<br>DIRECTED & SHOT</span></div></article>
+</div></section>
+<section id="about" class="block"><div class="wrap"><div class="head mono"><span>ABOUT</span><span>PRANAV CHANDANE</span></div><div class="two-col"><div class="about-photo reveal"><img src="ctrl.jpg" alt="Studio TinTin portfolio image"></div><div class="about-copy reveal"><h2>BEHIND THE IMAGE.<br>INSIDE THE STORY.</h2><p>Pranav Chandane is a cinematographer, director and creative producer specialising in feature films, web series, advertising campaigns and large-scale live events.</p><p>His work spans BTS cinematography, still photography, Electronic Press Kits (EPKs), marketing films and digital campaign content — transforming the filmmaking process into compelling visual stories.</p><p>He works across complex productions involving multiple teams, cameras and fast-paced shooting environments, from intimate creative moments and interviews to large-scale action sequences and live events.</p><div class="links"><a href="pranav-chandane-portfolio.pdf" target="_blank">VIEW FULL PORTFOLIO PDF</a></div></div></div></div></section>
+<section id="services" class="block"><div class="wrap"><div class="head mono"><span>CAPABILITIES</span><span>WHAT WE DO</span></div><div class="services"><div class="service reveal"><span class="mono">01</span><h3>FILM</h3><p>BTS cinematography, EPKs, production documentation, film stills, interviews and marketing content.</p></div><div class="service reveal"><span class="mono">02</span><h3>ADVERTISING</h3><p>Campaign content, behind-the-scenes films, brand storytelling and digital campaign assets.</p></div><div class="service reveal"><span class="mono">03</span><h3>CREATIVE DIRECTION</h3><p>Creative direction and execution for EPKs, BTS narratives and visual marketing pieces.</p></div><div class="service reveal"><span class="mono">04</span><h3>LIVE / CULTURE</h3><p>Live event coverage and fast-turnaround social content for large-scale experiences.</p></div></div></div></section>
+<section class="block"><div class="wrap"><div class="head mono"><span>SELECTED CREDITS</span><span>COLLABORATIONS</span></div><div class="credits"><div class="credit">Netflix</div><div class="credit">Amazon Prime Video</div><div class="credit">A24</div><div class="credit">Canali</div><div class="credit">Applause Entertainment</div><div class="credit">Harkat</div><div class="credit">MINI India</div><div class="credit">Myntra</div><div class="credit">Mahindra Blues Festival</div></div></div></section>
+<section class="block"><div class="wrap"><div class="head mono"><span>UPCOMING</span><span>2027</span></div><div class="two-col"><div class="reveal"><img src="sarfira-2.jpg" alt="Portfolio visual"></div><div class="about-copy reveal"><h2>THE<br>PEASANT</h2><p>Feature film produced by A24. The portfolio describes Pranav's role as BTS cinematographer while leading the creative direction and execution of EPK and behind-the-scenes content, including filmmaker and cast interviews, the filmmaking process and large-scale action sequences.</p></div></div></div></section>
+<section id="contact" class="contact"><div class="wrap"><div class="mono">HAVE A PROJECT?</div><h2>LET'S<br>MAKE<br>SOMETHING.</h2><a class="email" href="mailto:work.pranavchandane@gmail.com">work.pranavchandane@gmail.com</a></div></section>
+<footer><div class="wrap foot"><span class="mono">© 2026 STUDIO TINTIN · PRANAV CHANDANE</span><div class="social"><a class="mono" href="mailto:work.pranavchandane@gmail.com">EMAIL</a><a class="mono" href="pranav-chandane-portfolio.pdf" target="_blank">PORTFOLIO PDF</a></div></div></footer>
+<div class="modal" id="modal"><button class="close" aria-label="Close">×</button><div class="modal-inner"><div class="mono" id="mRole"></div><h2 id="mTitle"></h2><p id="mText"></p><div class="links" id="mLinks"></div><img class="modal-img" id="mImg" alt=""></div></div>
 <script>
-const modal=document.getElementById('modal');
-const mTitle=document.getElementById('mTitle');
-const mRole=document.getElementById('mRole');
-const mText=document.getElementById('mText');
-const mImg=document.getElementById('mImg');
-const mLinks=document.getElementById('mLinks');
-
-document.querySelectorAll('.work-item[data-title]').forEach(card=>{
-  card.style.cursor='pointer';
-  card.addEventListener('click',()=>{
-    mTitle.textContent=card.dataset.title;
-    mRole.textContent=card.dataset.role||'';
-    mText.textContent=card.dataset.text||'';
-    mImg.src=card.dataset.img||'';
-    mImg.alt=card.dataset.title;
-    mLinks.innerHTML='';
-    if(card.dataset.links){
-      const parts=card.dataset.links.split('|');
-      for(let i=0;i<parts.length;i+=2){
-        const a=document.createElement('a');
-        a.href=parts[i+1]; a.target='_blank'; a.rel='noopener';
-        a.textContent=parts[i];
-        mLinks.appendChild(a);
-      }
-    }
-    modal.classList.add('open');
-    document.body.style.overflow='hidden';
-  });
-});
-function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
-document.querySelector('.close').addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const modal=document.getElementById('modal'),mTitle=document.getElementById('mTitle'),mRole=document.getElementById('mRole'),mText=document.getElementById('mText'),mImg=document.getElementById('mImg'),mLinks=document.getElementById('mLinks');
+document.querySelectorAll('.work-item[data-title]').forEach(card=>{card.style.cursor='pointer';card.addEventListener('click',()=>{mTitle.textContent=card.dataset.title;mRole.textContent=card.dataset.role||'';mText.textContent=card.dataset.text||'';mImg.src=card.dataset.img||'';mImg.alt=card.dataset.title;mLinks.innerHTML='';if(card.dataset.links){const parts=card.dataset.links.split('|');for(let i=0;i<parts.length;i+=2){const a=document.createElement('a');a.href=parts[i+1];a.target='_blank';a.rel='noopener';a.textContent=parts[i];mLinks.appendChild(a)}}modal.classList.add('open');document.body.style.overflow='hidden'})});
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}document.querySelector('.close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
