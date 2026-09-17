@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#152F31">
 <meta name="description" content="Studio TinTin — Pranav Chandane. Cinematographer, Director and Creative Producer working across film, web series, advertising and live events.">
 <meta property="og:title" content="Studio TinTin — Pranav Chandane">
 <meta property="og:description" content="Cinematography · Direction · Creative Production">
@@ -125,6 +125,114 @@ footer{padding:20px 0}.foot{display:block}.social{gap:18px;margin-top:14px}
 .modal-video{width:100%;aspect-ratio:16/10}
 }
 
+
+/* Studio TinTin — Teal Editorial Palette */
+:root{
+  --bg:#071011;
+  --fg:#F1F0EC;
+  --muted:#8A9694;
+  --line:rgba(241,240,236,.15);
+  --teal:#1C3E40;
+  --teal-deep:#152F31;
+  --teal-soft:#24484A;
+  --ink:#050A0B;
+}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--fg)}
+::selection{background:var(--fg);color:var(--teal-deep)}
+
+nav{
+  background:rgba(21,47,49,.86);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  mix-blend-mode:normal;
+  color:var(--fg);
+  border-bottom:1px solid rgba(241,240,236,.08);
+}
+.nav a{color:var(--fg)}
+
+.hero{background:var(--ink)}
+.hero-media{
+  background:linear-gradient(180deg,rgba(5,10,11,.08) 15%,rgba(5,10,11,.82) 100%),url('ctrl.jpg') center/cover no-repeat;
+}
+.hero-media-next{
+  background-image:linear-gradient(180deg,rgba(5,10,11,.08) 15%,rgba(5,10,11,.82) 100%),url('kohrra.jpg');
+}
+.hero-copy{color:#D9D8D2}
+.scroll i{background:var(--fg)}
+
+.intro{
+  background:var(--teal);
+}
+.intro em{color:#AAB5B2}
+
+section#work{
+  background:var(--ink);
+}
+section#work + section{
+  background:var(--teal);
+}
+section#about{
+  background:var(--teal);
+}
+section#services{
+  background:var(--ink);
+}
+section#services + section{
+  background:var(--teal);
+}
+section#services + section + section{
+  background:var(--ink);
+}
+
+.head,.services,.credits{
+  border-color:var(--line);
+}
+.work-item{
+  border-color:var(--line);
+}
+.work-image{background:var(--teal-deep)}
+.work-image img{filter:saturate(.84)}
+.work-item:hover .work-image img{filter:saturate(1)}
+
+.about-copy p,.service p,.peasant-card p{color:#A9B2B0}
+.about-photo{background:var(--teal-deep)}
+
+.service,.credit{
+  border-color:var(--line);
+}
+.credit:nth-child(3n+2),.credit:nth-child(3n+3){
+  border-left-color:var(--line);
+}
+
+.peasant-card{
+  background:var(--teal);
+  border:1px solid rgba(241,240,236,.09);
+}
+.peasant-card:before,.peasant-card:after{color:rgba(5,10,11,.22)}
+
+.contact{
+  background:var(--ink);
+}
+.contact .email{
+  border-color:#667371;
+}
+.contact .email:hover{border-color:var(--fg)}
+
+footer{
+  background:var(--teal-deep);
+  border-color:var(--line);
+}
+
+.modal{
+  background:rgba(5,10,11,.97);
+}
+.close{color:var(--fg)}
+
+@media(max-width:760px){
+  nav{background:rgba(21,47,49,.92)}
+}
+
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
@@ -132,7 +240,7 @@ footer{padding:20px 0}.foot{display:block}.social{gap:18px;margin-top:14px}
 <header class="hero"><div class="hero-media"></div><div class="hero-media hero-media-next"></div><div class="hero-project"><span class="mono" id="heroProjectNo">01 / 11</span><strong id="heroProjectTitle">KOHRRA S2</strong><span class="mono" id="heroProjectRole">NETFLIX · BTS / EPK</span></div><div class="hero-grid"><div class="mono kicker">PRANAV CHANDANE · MUMBAI / INDIA</div><h1><span>Studio</span><span>TinTin</span></h1><div class="hero-foot"><p class="hero-copy">Cinematographer · Director · Creative Producer<br>Visual storytelling across feature films, web series, advertising campaigns and large-scale live events.</p><div class="scroll mono"><i></i> SCROLL TO EXPLORE</div></div></div></header>
 <section class="intro block"><div class="wrap"><p class="reveal">Turning the filmmaking process into <em>visual stories</em> — from the first frame on set to the final piece of the campaign.</p></div></section>
 <section id="work" class="block"><div class="wrap"><div class="head mono"><span>SELECTED FILM & SERIES</span><span>01 — 08</span></div>
-<article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="ctrl.jpg" data-links="WATCH FILM|https://youtu.be/cM7DOwbeVIM"><div class="work-image"><img src="ctrl.jpg" alt="Kohrra Season 2 portfolio image"></div><div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div></article>
+<article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="ctrl.jpg" data-links="WATCH FILM|https://youtu.be/cM7DOwbeVIM|REEL 01|https://www.instagram.com/reel/DU2WwbFE_wY/?stkn=Ymc0OXZvM2lhaWdo|REEL 02|https://www.instagram.com/reel/DUsWwUoErlN/?stkn=Zmg4OTBzN2EweHhs"><div class="work-image"><img src="ctrl.jpg" alt="Kohrra Season 2 portfolio image"></div><div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div></article>
 <article class="work-item reveal" data-title="CTRL" data-role="BTS Cinematographer · BTS Director" data-text="Netflix movie directed by Vikramaditya Motwane. BTS cinematography and direction, capturing the creative process, on-set moments and making of the film through an engaging visual storytelling approach." data-img="kohrra.jpg" data-links="CTRL|https://youtu.be/EqHM9rw50d4"><div class="work-image"><img src="kohrra.jpg" alt="CTRL portfolio image"></div><div class="work-meta"><span class="mono">02</span><strong class="work-title">CTRL</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div></article>
 <article class="work-item reveal" data-title="Black Warrant" data-role="BTS Cinematographer · Director" data-text="Netflix web series. BTS cinematography and direction focused on key production moments, the intensity of action, performances, craftsmanship and the dynamic working environment on set." data-img="black-warrant.jpg" data-links="WATCH VIDEO|https://youtu.be/qoShUvFfEZU|REEL 01|https://www.instagram.com/reel/DGxpcsCyfJA/?stkn=bmpjYWlyNjY1ZzN0|REEL 02|https://www.instagram.com/reel/DHmmW-KoarK/?stkn=ZGdibG1xMzJvZmEy|REEL 03|https://www.instagram.com/reel/DHpd5i5Ibjy/?stkn=Ym10ZWV5czg3ZXN5"><div class="work-image"><img src="black-warrant.jpg" alt="Black Warrant portfolio image"></div><div class="work-meta"><span class="mono">03</span><strong class="work-title">BLACK WARRANT</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div></article>
 <article class="work-item reveal" data-title="Jubilee" data-role="BTS Cinematography" data-text="Behind-the-scenes work documenting the creative process and key moments during production, creating marketing content for social media." data-img="jubilee.jpg" data-links="WATCH VIDEO|https://youtu.be/S6pKD6_WozM"><div class="work-image"><img src="jubilee.jpg" alt="Jubilee portfolio image"></div><div class="work-meta"><span class="mono">04</span><strong class="work-title">JUBILEE</strong><span class="work-info mono">AMAZON PRIME<br>BTS</span></div></article>
