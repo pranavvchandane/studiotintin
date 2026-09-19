@@ -233,6 +233,412 @@ footer{
   nav{background:rgba(21,47,49,.92)}
 }
 
+
+/* =========================================================
+   STUDIO TINTIN — CINEMATIC / APPLE-INSPIRED SYSTEM
+   ========================================================= */
+:root{
+  --black:#000;
+  --near:#080808;
+  --surface:#111;
+  --white:#f5f5f0;
+  --muted:#8c8c87;
+  --line:rgba(255,255,255,.13);
+  --teal:#1c3e40;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{
+  background:var(--black);
+  scroll-behavior:smooth;
+}
+body{
+  background:var(--black)!important;
+  color:var(--white)!important;
+  overflow-x:hidden;
+}
+body:before{
+  opacity:.025!important;
+}
+::selection{
+  background:var(--white);
+  color:var(--black);
+}
+
+/* Minimal floating navigation */
+nav{
+  height:64px!important;
+  padding:0 4vw!important;
+  background:rgba(0,0,0,.68)!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+  backdrop-filter:saturate(180%) blur(22px)!important;
+  -webkit-backdrop-filter:saturate(180%) blur(22px)!important;
+  z-index:1000;
+}
+nav .logo,
+.nav-logo{
+  letter-spacing:-.04em!important;
+  font-weight:700!important;
+}
+nav a{
+  opacity:.68;
+  transition:opacity .35s ease;
+}
+nav a:hover{opacity:1}
+
+/* Hero becomes an immersive opening frame */
+.hero{
+  min-height:100svh!important;
+  background:#000!important;
+  position:relative;
+}
+.hero-media,
+.hero-media-next{
+  inset:0!important;
+  position:absolute!important;
+  background-color:#000!important;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.05) 42%,rgba(0,0,0,.72) 100%);
+  pointer-events:none;
+  z-index:2;
+}
+.hero-content,
+.hero-copy,
+.hero-project,
+.hero .scroll{
+  z-index:3;
+}
+.hero-copy{
+  max-width:900px!important;
+  left:5vw!important;
+  bottom:8vh!important;
+}
+.hero-copy h1{
+  font-size:clamp(64px,10vw,170px)!important;
+  line-height:.84!important;
+  letter-spacing:-.075em!important;
+  font-weight:650!important;
+}
+.hero-copy p{
+  max-width:520px!important;
+  font-size:clamp(15px,1.3vw,21px)!important;
+  line-height:1.45!important;
+  color:rgba(245,245,240,.78)!important;
+}
+.hero-project{
+  left:auto!important;
+  right:5vw!important;
+  bottom:8vh!important;
+  text-align:right!important;
+}
+.hero-project strong{
+  font-size:clamp(18px,2vw,30px)!important;
+  letter-spacing:-.04em!important;
+}
+.hero-project span{
+  color:rgba(245,245,240,.58)!important;
+}
+.scroll{
+  opacity:.65;
+}
+
+/* Intro — one statement, lots of breathing room */
+.intro{
+  min-height:90vh!important;
+  padding:15vw 8vw!important;
+  background:#f5f5f0!important;
+  color:#080808!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.intro h2{
+  max-width:1150px!important;
+  font-size:clamp(44px,7vw,112px)!important;
+  line-height:.93!important;
+  letter-spacing:-.065em!important;
+  font-weight:600!important;
+}
+.intro em{
+  color:#777!important;
+}
+
+/* Work becomes full-bleed editorial chapters */
+#work{
+  background:#000!important;
+  padding:0!important;
+}
+#work .head{
+  padding:120px 5vw 48px!important;
+  border:0!important;
+}
+#work .head h2{
+  font-size:clamp(42px,6vw,88px)!important;
+  letter-spacing:-.06em!important;
+}
+.work-grid{
+  display:block!important;
+}
+.work-item{
+  position:relative!important;
+  min-height:100svh!important;
+  margin:0!important;
+  border:0!important;
+  border-top:1px solid var(--line)!important;
+  overflow:hidden!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  padding:0!important;
+}
+.work-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  background:#111!important;
+  border:0!important;
+}
+.work-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.8) 100%);
+  transition:opacity .7s var(--ease);
+}
+.work-image img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  transform:scale(1.01)!important;
+  transition:transform 1.4s var(--ease),filter 1.2s ease!important;
+  filter:saturate(.82)!important;
+}
+.work-item:hover .work-image img{
+  transform:scale(1.055)!important;
+  filter:saturate(1)!important;
+}
+.work-info{
+  position:relative!important;
+  z-index:4!important;
+  width:100%!important;
+  padding:7vw 5vw 6vw!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:flex-end!important;
+  color:var(--white)!important;
+}
+.work-info h3{
+  font-size:clamp(34px,5vw,82px)!important;
+  line-height:.9!important;
+  letter-spacing:-.065em!important;
+  max-width:850px!important;
+}
+.work-info p{
+  color:rgba(245,245,240,.68)!important;
+}
+.work-info .number{
+  font-family:"DM Mono",monospace!important;
+  font-size:12px!important;
+  letter-spacing:.1em!important;
+  margin-bottom:12px!important;
+}
+.work-item:after{
+  content:"VIEW PROJECT  ↗";
+  position:absolute;
+  right:5vw;
+  top:5vw;
+  z-index:5;
+  font:11px "DM Mono",monospace;
+  letter-spacing:.12em;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .5s var(--ease);
+}
+.work-item:hover:after{
+  opacity:.9;
+  transform:none;
+}
+
+/* Commercial section */
+#commercial{
+  background:#f5f5f0!important;
+  color:#080808!important;
+  padding:10vw 5vw!important;
+}
+#commercial .head{
+  border-color:rgba(0,0,0,.14)!important;
+}
+#commercial .work-item{
+  min-height:72vh!important;
+  border-color:rgba(0,0,0,.14)!important;
+}
+#commercial .work-info{
+  color:#080808!important;
+}
+#commercial .work-image:after{
+  background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.6));
+}
+#commercial .work-info p{color:rgba(255,255,255,.75)!important}
+
+/* About */
+#about{
+  background:#111!important;
+  padding:14vw 5vw!important;
+}
+#about .about-grid{
+  max-width:1500px!important;
+  margin:auto!important;
+  gap:8vw!important;
+}
+#about h2{
+  font-size:clamp(50px,7vw,110px)!important;
+  line-height:.88!important;
+  letter-spacing:-.07em!important;
+}
+#about p{
+  color:#aaa!important;
+  font-size:clamp(17px,1.5vw,23px)!important;
+  line-height:1.45!important;
+}
+.about-photo img{
+  filter:saturate(.82)!important;
+  transition:transform 1s var(--ease)!important;
+}
+.about-photo:hover img{transform:scale(1.025)}
+
+/* Services / credits */
+#services{
+  background:#000!important;
+  padding:12vw 5vw!important;
+}
+#services .service{
+  padding:42px 0!important;
+  border-color:var(--line)!important;
+}
+#services .service h3{
+  font-size:clamp(25px,3vw,44px)!important;
+  letter-spacing:-.045em!important;
+}
+#services .service p{color:#8c8c87!important}
+
+/* Peasant gets a product-page style reveal */
+#upcoming{
+  background:#f5f5f0!important;
+  color:#080808!important;
+  padding:14vw 5vw!important;
+}
+.peasant-card{
+  max-width:1500px!important;
+  margin:auto!important;
+  background:#000!important;
+  color:var(--white)!important;
+  border:0!important;
+  min-height:80vh!important;
+  padding:8vw!important;
+  display:flex!important;
+  align-items:flex-end!important;
+}
+.peasant-card h2{
+  font-size:clamp(52px,8vw,130px)!important;
+  letter-spacing:-.075em!important;
+  line-height:.82!important;
+}
+.peasant-card p{color:#aaa!important}
+
+/* Contact — quiet, oversized ending */
+.contact{
+  min-height:92vh!important;
+  padding:12vw 5vw 5vw!important;
+  background:#000!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+}
+.contact .kicker{
+  color:#777!important;
+}
+.contact h2{
+  font-size:clamp(58px,10vw,170px)!important;
+  line-height:.82!important;
+  letter-spacing:-.075em!important;
+  max-width:1200px!important;
+}
+.contact .email{
+  margin-top:7vw!important;
+  font-size:clamp(20px,2.2vw,34px)!important;
+  border-bottom:1px solid rgba(255,255,255,.28)!important;
+  padding-bottom:12px!important;
+  width:max-content!important;
+  max-width:100%!important;
+}
+footer{
+  background:#000!important;
+  border-color:rgba(255,255,255,.12)!important;
+}
+
+/* Modal — clean fullscreen cinema */
+.modal{
+  background:rgba(0,0,0,.96)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+}
+.modal-inner{
+  max-width:1600px!important;
+}
+.modal-info h2{
+  font-size:clamp(38px,5vw,76px)!important;
+  letter-spacing:-.06em!important;
+  line-height:.9!important;
+}
+.modal-info p{color:#999!important}
+.modal-close{
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+}
+
+/* Reveal animation: restrained and slow */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 1s var(--ease),transform 1s var(--ease);
+}
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  nav{height:56px!important;padding:0 20px!important}
+  .hero-copy{left:22px!important;bottom:100px!important}
+  .hero-copy h1{font-size:18vw!important}
+  .hero-project{right:22px!important;bottom:30px!important}
+  .intro{min-height:75vh!important;padding:26vw 22px!important}
+  .intro h2{font-size:12vw!important}
+  #work .head{padding:80px 22px 28px!important}
+  .work-item{min-height:78svh!important}
+  .work-info{padding:22px!important;display:block!important}
+  .work-info h3{font-size:11vw!important}
+  .work-item:after{display:none}
+  #commercial{padding:20vw 22px!important}
+  #commercial .work-item{min-height:68svh!important}
+  #about,#services,#upcoming{padding:24vw 22px!important}
+  #about h2{font-size:13vw!important}
+  .peasant-card{min-height:70vh!important;padding:28px 22px!important}
+  .peasant-card h2{font-size:15vw!important}
+  .contact{min-height:80svh!important;padding:24vw 22px 14vw!important}
+  .contact h2{font-size:15vw!important}
+  .contact .email{font-size:18px!important;width:100%!important}
+}
+
+/* Touch devices: no artificial hover behavior */
+@media(hover:none){
+  .work-item:hover .work-image img{transform:scale(1.01)!important}
+  .about-photo:hover img{transform:none}
+}
+
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
