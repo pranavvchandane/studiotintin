@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#152F31">
+<meta name="theme-color" content="#0a0a0a">
 <meta name="description" content="Studio TinTin — Pranav Chandane. Cinematographer, Director and Creative Producer working across film, web series, advertising and live events.">
 <meta property="og:title" content="Studio TinTin — Pranav Chandane">
 <meta property="og:description" content="Cinematography · Direction · Creative Production">
@@ -126,517 +126,386 @@ footer{padding:20px 0}.foot{display:block}.social{gap:18px;margin-top:14px}
 }
 
 
-/* Studio TinTin — Teal Editorial Palette */
-:root{
-  --bg:#071011;
-  --fg:#F1F0EC;
-  --muted:#8A9694;
-  --line:rgba(241,240,236,.15);
-  --teal:#1C3E40;
-  --teal-deep:#152F31;
-  --teal-soft:#24484A;
-  --ink:#050A0B;
-}
-html{background:var(--bg)}
-body{background:var(--bg);color:var(--fg)}
-::selection{background:var(--fg);color:var(--teal-deep)}
-
-nav{
-  background:rgba(21,47,49,.86);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  mix-blend-mode:normal;
-  color:var(--fg);
-  border-bottom:1px solid rgba(241,240,236,.08);
-}
-.nav a{color:var(--fg)}
-
-.hero{background:var(--ink)}
-.hero-media{
-  background:linear-gradient(180deg,rgba(5,10,11,.08) 15%,rgba(5,10,11,.82) 100%),url('ctrl.jpg') center/cover no-repeat;
-}
-.hero-media-next{
-  background-image:linear-gradient(180deg,rgba(5,10,11,.08) 15%,rgba(5,10,11,.82) 100%),url('kohrra.jpg');
-}
-.hero-copy{color:#D9D8D2}
-.scroll i{background:var(--fg)}
-
-.intro{
-  background:var(--teal);
-}
-.intro em{color:#AAB5B2}
-
-section#work{
-  background:var(--ink);
-}
-section#work + section{
-  background:var(--teal);
-}
-section#about{
-  background:var(--teal);
-}
-section#services{
-  background:var(--ink);
-}
-section#services + section{
-  background:var(--teal);
-}
-section#services + section + section{
-  background:var(--ink);
-}
-
-.head,.services,.credits{
-  border-color:var(--line);
-}
-.work-item{
-  border-color:var(--line);
-}
-.work-image{background:var(--teal-deep)}
-.work-image img{filter:saturate(.84)}
-.work-item:hover .work-image img{filter:saturate(1)}
-
-.about-copy p,.service p,.peasant-card p{color:#A9B2B0}
-.about-photo{background:var(--teal-deep)}
-
-.service,.credit{
-  border-color:var(--line);
-}
-.credit:nth-child(3n+2),.credit:nth-child(3n+3){
-  border-left-color:var(--line);
-}
-
-.peasant-card{
-  background:var(--teal);
-  border:1px solid rgba(241,240,236,.09);
-}
-.peasant-card:before,.peasant-card:after{color:rgba(5,10,11,.22)}
-
-.contact{
-  background:var(--ink);
-}
-.contact .email{
-  border-color:#667371;
-}
-.contact .email:hover{border-color:var(--fg)}
-
-footer{
-  background:var(--teal-deep);
-  border-color:var(--line);
-}
-
-.modal{
-  background:rgba(5,10,11,.97);
-}
-.close{color:var(--fg)}
-
-@media(max-width:760px){
-  nav{background:rgba(21,47,49,.92)}
-}
-
-
 /* =========================================================
-   STUDIO TINTIN — CINEMATIC / APPLE-INSPIRED SYSTEM
+   STUDIO TINTIN — REFINED CINEMATIC EDITORIAL
+   Inspired by high-end product/editorial design:
+   restrained scale, generous spacing, quiet motion.
    ========================================================= */
+
 :root{
-  --black:#000;
-  --near:#080808;
-  --surface:#111;
-  --white:#f5f5f0;
-  --muted:#8c8c87;
-  --line:rgba(255,255,255,.13);
-  --teal:#1c3e40;
+  --bg:#090909;
+  --surface:#111212;
+  --surface-2:#171919;
+  --fg:#f2f1ec;
+  --muted:#969691;
+  --line:rgba(242,241,236,.13);
+  --accent:#1c3e40;
   --ease:cubic-bezier(.22,1,.36,1);
 }
-html{
-  background:var(--black);
-  scroll-behavior:smooth;
-}
+
+html{background:var(--bg);scroll-behavior:smooth}
 body{
-  background:var(--black)!important;
-  color:var(--white)!important;
+  background:var(--bg)!important;
+  color:var(--fg)!important;
   overflow-x:hidden;
 }
-body:before{
-  opacity:.025!important;
-}
-::selection{
-  background:var(--white);
-  color:var(--black);
-}
+::selection{background:var(--fg);color:#090909}
 
-/* Minimal floating navigation */
+/* NAV — quiet, compact, never dominant */
 nav{
-  height:64px!important;
+  height:68px;
   padding:0 4vw!important;
-  background:rgba(0,0,0,.68)!important;
-  border-bottom:1px solid rgba(255,255,255,.07)!important;
-  backdrop-filter:saturate(180%) blur(22px)!important;
-  -webkit-backdrop-filter:saturate(180%) blur(22px)!important;
-  z-index:1000;
+  background:rgba(9,9,9,.52)!important;
+  mix-blend-mode:normal!important;
+  backdrop-filter:blur(18px) saturate(120%);
+  -webkit-backdrop-filter:blur(18px) saturate(120%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:background .5s ease, height .5s var(--ease);
 }
-nav .logo,
-.nav-logo{
-  letter-spacing:-.04em!important;
-  font-weight:700!important;
+nav.scrolled{
+  height:60px;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  background:rgba(9,9,9,.84)!important;
 }
-nav a{
-  opacity:.68;
-  transition:opacity .35s ease;
-}
-nav a:hover{opacity:1}
+.logo{font-size:15px!important}
+.nav{gap:26px!important}
+.nav a{font-size:9px!important;opacity:.72}
+.nav a:hover{opacity:1;text-decoration:none}
 
-/* Hero becomes an immersive opening frame */
-.hero{
-  min-height:100svh!important;
-  background:#000!important;
-  position:relative;
+/* HERO — controlled scale */
+.hero{min-height:92svh!important}
+.hero-media{transform:scale(1.015)!important;animation:heroIn 1.6s var(--ease) forwards}
+.hero-grid{
+  padding:0 4vw 48px!important;
+  max-width:1500px;
+  margin:auto;
 }
-.hero-media,
-.hero-media-next{
-  inset:0!important;
-  position:absolute!important;
-  background-color:#000!important;
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.05) 42%,rgba(0,0,0,.72) 100%);
-  pointer-events:none;
-  z-index:2;
-}
-.hero-content,
-.hero-copy,
-.hero-project,
-.hero .scroll{
-  z-index:3;
-}
-.hero-copy{
-  max-width:900px!important;
-  left:5vw!important;
-  bottom:8vh!important;
-}
-.hero-copy h1{
-  font-size:clamp(64px,10vw,170px)!important;
+.kicker{margin-bottom:20px!important}
+.hero h1{
+  font-size:clamp(64px,10vw,148px)!important;
   line-height:.84!important;
   letter-spacing:-.075em!important;
   font-weight:650!important;
 }
-.hero-copy p{
-  max-width:520px!important;
-  font-size:clamp(15px,1.3vw,21px)!important;
-  line-height:1.45!important;
-  color:rgba(245,245,240,.78)!important;
+.hero-foot{
+  margin-top:42px!important;
+  max-width:1080px;
+}
+.hero-copy{
+  max-width:420px!important;
+  font-size:13px!important;
+  line-height:1.65!important;
 }
 .hero-project{
-  left:auto!important;
-  right:5vw!important;
-  bottom:8vh!important;
-  text-align:right!important;
+  right:4vw!important;
+  bottom:48px!important;
+  max-width:300px!important;
 }
 .hero-project strong{
-  font-size:clamp(18px,2vw,30px)!important;
-  letter-spacing:-.04em!important;
+  font-size:clamp(18px,2vw,28px)!important;
 }
-.hero-project span{
-  color:rgba(245,245,240,.58)!important;
+
+/* INTRO — one strong statement, not a giant poster */
+.intro{
+  min-height:76vh!important;
+  padding:11vw 4vw!important;
+  background:#f2f1ec!important;
+  color:#0a0a0a!important;
 }
-.scroll{
+.intro p{
+  max-width:1050px!important;
+  font-size:clamp(34px,4.6vw,66px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.055em!important;
+}
+.intro em{color:#666!important}
+
+/* WORK — editorial width, not full-screen cards */
+section.block{padding:105px 0!important}
+#work{background:var(--bg)!important}
+#work .wrap{width:min(92vw,1320px)}
+.head{
+  margin-bottom:54px!important;
+  padding-top:12px!important;
+}
+.work-item{
+  width:88%!important;
+  margin:0 0 115px!important;
+}
+.work-item:nth-child(even){
+  width:76%!important;
+  margin-left:auto!important;
+}
+.work-item:nth-child(3n){
+  width:84%!important;
+}
+.work-image{
+  background:#121313!important;
+}
+.work-image img{
+  filter:saturate(.88)!important;
+  transition:transform 1.25s var(--ease),filter 1.25s ease!important;
+}
+.work-item:hover .work-image img{
+  transform:scale(1.025)!important;
+  filter:saturate(1)!important;
+}
+.work-image:after{
+  width:76px!important;
+  height:76px!important;
+  font-size:7px!important;
+  transition:opacity .5s ease,transform .7s var(--ease)!important;
+}
+.work-meta{
+  padding-top:13px!important;
+  margin-top:11px!important;
+  gap:20px!important;
+}
+.work-title{
+  font-size:clamp(27px,3.45vw,52px)!important;
+  line-height:.94!important;
+  letter-spacing:-.055em!important;
+}
+.work-info{
+  font-size:9px!important;
+  line-height:1.5!important;
+}
+
+/* Commercial/text project */
+.text-project{
+  min-height:390px!important;
+  padding:6vw!important;
+  background:#111!important;
+}
+.text-project h3{
+  font-size:clamp(40px,5.2vw,76px)!important;
+}
+.text-project:before{font-size:14vw!important}
+
+/* ABOUT — balanced two-column composition */
+#about{background:#111!important}
+#about .wrap{width:min(92vw,1320px)}
+.two-col{gap:7vw!important}
+.about-photo img{
+  height:auto!important;
+  aspect-ratio:4/5!important;
+  object-fit:cover!important;
+}
+.about-copy h2{
+  font-size:clamp(36px,4.2vw,62px)!important;
+  letter-spacing:-.055em!important;
+}
+.about-copy p{
+  font-size:13px!important;
+  line-height:1.8!important;
+  color:#a5a5a0!important;
+}
+
+/* SERVICES — calm typography */
+#services{background:#090909!important}
+.services{border-color:var(--line)!important}
+.service{
+  padding:29px 0!important;
+  gap:22px!important;
+}
+.service h3{
+  font-size:clamp(25px,3vw,42px)!important;
+  letter-spacing:-.045em!important;
+}
+.service p{font-size:13px!important;color:#969691!important}
+
+/* CREDITS */
+.credits{border-color:var(--line)!important}
+.credit{
+  padding:23px 16px!important;
+  font-size:17px!important;
+}
+
+/* PEASANT — premium feature card, not oversized typography */
+#upcoming{background:#f2f1ec!important;color:#090909!important}
+.peasant-card{
+  height:auto!important;
+  min-height:620px!important;
+  padding:6vw!important;
+  background:
+    radial-gradient(circle at 75% 25%,rgba(255,255,255,.09),transparent 30%),
+    linear-gradient(135deg,#0a0a0a,#171919)!important;
+  border:0!important;
+}
+.peasant-card h3{
+  font-size:clamp(48px,6.2vw,92px)!important;
+  letter-spacing:-.065em!important;
+}
+.peasant-lead{font-size:clamp(23px,2.3vw,34px)!important}
+.peasant-card:before{font-size:15vw!important}
+.peasant-card:after{font-size:10vw!important}
+
+/* CONTACT — proportionate, quiet ending */
+.contact{
+  min-height:72vh!important;
+  padding:10vw 0!important;
+  background:#090909!important;
+}
+.contact h2{
+  font-size:clamp(56px,7.8vw,118px)!important;
+  line-height:.84!important;
+  letter-spacing:-.075em!important;
+  margin:22px 0 48px!important;
+}
+.email{
+  font-size:clamp(18px,2.2vw,29px)!important;
+}
+.contact:before{
+  font-size:clamp(90px,15vw,220px)!important;
   opacity:.65;
 }
 
-/* Intro — one statement, lots of breathing room */
-.intro{
-  min-height:90vh!important;
-  padding:15vw 8vw!important;
-  background:#f5f5f0!important;
-  color:#080808!important;
-  display:flex!important;
-  align-items:center!important;
-}
-.intro h2{
-  max-width:1150px!important;
-  font-size:clamp(44px,7vw,112px)!important;
-  line-height:.93!important;
-  letter-spacing:-.065em!important;
-  font-weight:600!important;
-}
-.intro em{
-  color:#777!important;
-}
-
-/* Work becomes full-bleed editorial chapters */
-#work{
-  background:#000!important;
-  padding:0!important;
-}
-#work .head{
-  padding:120px 5vw 48px!important;
-  border:0!important;
-}
-#work .head h2{
-  font-size:clamp(42px,6vw,88px)!important;
-  letter-spacing:-.06em!important;
-}
-.work-grid{
-  display:block!important;
-}
-.work-item{
-  position:relative!important;
-  min-height:100svh!important;
-  margin:0!important;
-  border:0!important;
-  border-top:1px solid var(--line)!important;
-  overflow:hidden!important;
-  display:flex!important;
-  align-items:flex-end!important;
-  padding:0!important;
-}
-.work-image{
-  position:absolute!important;
-  inset:0!important;
-  width:100%!important;
-  height:100%!important;
-  background:#111!important;
-  border:0!important;
-}
-.work-image:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.8) 100%);
-  transition:opacity .7s var(--ease);
-}
-.work-image img{
-  width:100%!important;
-  height:100%!important;
-  object-fit:cover!important;
-  transform:scale(1.01)!important;
-  transition:transform 1.4s var(--ease),filter 1.2s ease!important;
-  filter:saturate(.82)!important;
-}
-.work-item:hover .work-image img{
-  transform:scale(1.055)!important;
-  filter:saturate(1)!important;
-}
-.work-info{
-  position:relative!important;
-  z-index:4!important;
-  width:100%!important;
-  padding:7vw 5vw 6vw!important;
-  display:flex!important;
-  justify-content:space-between!important;
-  align-items:flex-end!important;
-  color:var(--white)!important;
-}
-.work-info h3{
-  font-size:clamp(34px,5vw,82px)!important;
-  line-height:.9!important;
-  letter-spacing:-.065em!important;
-  max-width:850px!important;
-}
-.work-info p{
-  color:rgba(245,245,240,.68)!important;
-}
-.work-info .number{
-  font-family:"DM Mono",monospace!important;
-  font-size:12px!important;
-  letter-spacing:.1em!important;
-  margin-bottom:12px!important;
-}
-.work-item:after{
-  content:"VIEW PROJECT  ↗";
-  position:absolute;
-  right:5vw;
-  top:5vw;
-  z-index:5;
-  font:11px "DM Mono",monospace;
-  letter-spacing:.12em;
-  opacity:0;
-  transform:translateY(8px);
-  transition:all .5s var(--ease);
-}
-.work-item:hover:after{
-  opacity:.9;
-  transform:none;
-}
-
-/* Commercial section */
-#commercial{
-  background:#f5f5f0!important;
-  color:#080808!important;
-  padding:10vw 5vw!important;
-}
-#commercial .head{
-  border-color:rgba(0,0,0,.14)!important;
-}
-#commercial .work-item{
-  min-height:72vh!important;
-  border-color:rgba(0,0,0,.14)!important;
-}
-#commercial .work-info{
-  color:#080808!important;
-}
-#commercial .work-image:after{
-  background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.6));
-}
-#commercial .work-info p{color:rgba(255,255,255,.75)!important}
-
-/* About */
-#about{
-  background:#111!important;
-  padding:14vw 5vw!important;
-}
-#about .about-grid{
-  max-width:1500px!important;
-  margin:auto!important;
-  gap:8vw!important;
-}
-#about h2{
-  font-size:clamp(50px,7vw,110px)!important;
-  line-height:.88!important;
-  letter-spacing:-.07em!important;
-}
-#about p{
-  color:#aaa!important;
-  font-size:clamp(17px,1.5vw,23px)!important;
-  line-height:1.45!important;
-}
-.about-photo img{
-  filter:saturate(.82)!important;
-  transition:transform 1s var(--ease)!important;
-}
-.about-photo:hover img{transform:scale(1.025)}
-
-/* Services / credits */
-#services{
-  background:#000!important;
-  padding:12vw 5vw!important;
-}
-#services .service{
-  padding:42px 0!important;
-  border-color:var(--line)!important;
-}
-#services .service h3{
-  font-size:clamp(25px,3vw,44px)!important;
-  letter-spacing:-.045em!important;
-}
-#services .service p{color:#8c8c87!important}
-
-/* Peasant gets a product-page style reveal */
-#upcoming{
-  background:#f5f5f0!important;
-  color:#080808!important;
-  padding:14vw 5vw!important;
-}
-.peasant-card{
-  max-width:1500px!important;
-  margin:auto!important;
-  background:#000!important;
-  color:var(--white)!important;
-  border:0!important;
-  min-height:80vh!important;
-  padding:8vw!important;
-  display:flex!important;
-  align-items:flex-end!important;
-}
-.peasant-card h2{
-  font-size:clamp(52px,8vw,130px)!important;
-  letter-spacing:-.075em!important;
-  line-height:.82!important;
-}
-.peasant-card p{color:#aaa!important}
-
-/* Contact — quiet, oversized ending */
-.contact{
-  min-height:92vh!important;
-  padding:12vw 5vw 5vw!important;
-  background:#000!important;
-  display:flex!important;
-  flex-direction:column!important;
-  justify-content:center!important;
-}
-.contact .kicker{
-  color:#777!important;
-}
-.contact h2{
-  font-size:clamp(58px,10vw,170px)!important;
-  line-height:.82!important;
-  letter-spacing:-.075em!important;
-  max-width:1200px!important;
-}
-.contact .email{
-  margin-top:7vw!important;
-  font-size:clamp(20px,2.2vw,34px)!important;
-  border-bottom:1px solid rgba(255,255,255,.28)!important;
-  padding-bottom:12px!important;
-  width:max-content!important;
-  max-width:100%!important;
-}
-footer{
-  background:#000!important;
-  border-color:rgba(255,255,255,.12)!important;
-}
-
-/* Modal — clean fullscreen cinema */
+/* MODAL — smooth, restrained */
 .modal{
-  background:rgba(0,0,0,.96)!important;
-  backdrop-filter:blur(12px)!important;
-  -webkit-backdrop-filter:blur(12px)!important;
+  background:rgba(5,5,5,.96)!important;
+  backdrop-filter:blur(20px)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  padding:7vh 4vw!important;
 }
 .modal-inner{
-  max-width:1600px!important;
+  width:min(1200px,100%)!important;
 }
-.modal-info h2{
-  font-size:clamp(38px,5vw,76px)!important;
-  letter-spacing:-.06em!important;
-  line-height:.9!important;
+.modal h2{
+  font-size:clamp(42px,6vw,82px)!important;
+  line-height:.88!important;
 }
-.modal-info p{color:#999!important}
-.modal-close{
-  background:rgba(255,255,255,.08)!important;
-  border:1px solid rgba(255,255,255,.18)!important;
+.modal p{
+  max-width:680px!important;
+  font-size:14px!important;
+}
+.modal .modal-img{
+  margin-top:34px!important;
+  max-height:66vh!important;
+}
+.modal-video{
+  margin-top:34px!important;
+  border:0!important;
+}
+.links a{
+  transition:background .3s ease,color .3s ease,border-color .3s ease!important;
+}
+.links a:hover{
+  background:var(--fg)!important;
+  color:#090909!important;
 }
 
-/* Reveal animation: restrained and slow */
+/* MOTION — soft, no bouncing */
 .reveal{
-  opacity:0;
-  transform:translateY(28px);
-  transition:opacity 1s var(--ease),transform 1s var(--ease);
+  transform:translateY(20px)!important;
+  transition:opacity .8s ease,transform .9s var(--ease)!important;
 }
-.reveal.visible{
-  opacity:1;
-  transform:none;
+.reveal.show{
+  transform:none!important;
 }
 
-/* Mobile */
+/* Remove the visually heavy experimental hover behaviors */
+.work-item:hover .work-meta{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.work-item:hover .work-title{
+  letter-spacing:-.055em!important;
+}
+.service:hover{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.service:hover h3{transform:none!important}
+.credit:hover{
+  background:transparent!important;
+  color:inherit!important;
+}
+
+/* MOBILE — deliberate proportions */
 @media(max-width:760px){
-  nav{height:56px!important;padding:0 20px!important}
-  .hero-copy{left:22px!important;bottom:100px!important}
-  .hero-copy h1{font-size:18vw!important}
-  .hero-project{right:22px!important;bottom:30px!important}
-  .intro{min-height:75vh!important;padding:26vw 22px!important}
-  .intro h2{font-size:12vw!important}
-  #work .head{padding:80px 22px 28px!important}
-  .work-item{min-height:78svh!important}
-  .work-info{padding:22px!important;display:block!important}
-  .work-info h3{font-size:11vw!important}
-  .work-item:after{display:none}
-  #commercial{padding:20vw 22px!important}
-  #commercial .work-item{min-height:68svh!important}
-  #about,#services,#upcoming{padding:24vw 22px!important}
-  #about h2{font-size:13vw!important}
-  .peasant-card{min-height:70vh!important;padding:28px 22px!important}
-  .peasant-card h2{font-size:15vw!important}
-  .contact{min-height:80svh!important;padding:24vw 22px 14vw!important}
-  .contact h2{font-size:15vw!important}
-  .contact .email{font-size:18px!important;width:100%!important}
-}
+  nav{height:58px!important;padding:0 20px!important}
+  nav.scrolled{height:54px!important}
+  .nav{gap:15px!important}
+  .nav a{font-size:8px!important}
 
-/* Touch devices: no artificial hover behavior */
-@media(hover:none){
-  .work-item:hover .work-image img{transform:scale(1.01)!important}
-  .about-photo:hover img{transform:none}
+  .hero{min-height:88svh!important}
+  .hero-grid{padding:0 20px 30px!important}
+  .hero h1{
+    font-size:19vw!important;
+    line-height:.84!important;
+  }
+  .hero-foot{margin-top:27px!important}
+  .hero-copy{font-size:11px!important;max-width:285px!important}
+  .hero-project{
+    right:20px!important;
+    bottom:105px!important;
+  }
+  .hero-project strong{font-size:18px!important}
+
+  .intro{
+    min-height:64svh!important;
+    padding:22vw 20px!important;
+  }
+  .intro p{font-size:31px!important}
+
+  section.block{padding:75px 0!important}
+  #work .wrap{width:calc(100% - 40px)!important}
+  .head{margin-bottom:38px!important}
+  .work-item,
+  .work-item:nth-child(even),
+  .work-item:nth-child(3n){
+    width:100%!important;
+    margin-left:0!important;
+    margin-bottom:72px!important;
+  }
+  .work-title{font-size:30px!important}
+  .work-info{font-size:8px!important}
+  .work-image:after{display:none!important}
+
+  .text-project{min-height:330px!important;padding:32px!important}
+  .text-project h3{font-size:46px!important}
+
+  .two-col{gap:45px!important}
+  .about-photo img{
+    aspect-ratio:4/5!important;
+    height:auto!important;
+  }
+  .about-copy h2{font-size:39px!important}
+  .about-copy p{font-size:12px!important}
+
+  .service{
+    grid-template-columns:28px 1fr!important;
+    padding:24px 0!important;
+  }
+  .service h3{font-size:29px!important}
+  .service p{font-size:12px!important}
+
+  .credits{grid-template-columns:1fr 1fr!important}
+  .credit{font-size:15px!important;padding:20px 12px!important}
+
+  .peasant-card{
+    min-height:520px!important;
+    padding:30px!important;
+  }
+  .peasant-card h3{font-size:56px!important}
+
+  .contact{
+    min-height:68svh!important;
+    padding:24vw 0!important;
+  }
+  .contact h2{
+    font-size:14.5vw!important;
+    margin-bottom:38px!important;
+  }
+  .email{
+    font-size:17px!important;
+    word-break:break-word;
+  }
+  .contact:before{font-size:24vw!important}
+
+  .modal{padding:70px 20px 35px!important}
+  .modal h2{font-size:43px!important}
 }
 
 </style>
@@ -646,7 +515,7 @@ footer{
 <header class="hero"><div class="hero-media"></div><div class="hero-media hero-media-next"></div><div class="hero-project"><span class="mono" id="heroProjectNo">01 / 11</span><strong id="heroProjectTitle">KOHRRA S2</strong><span class="mono" id="heroProjectRole">NETFLIX · BTS / EPK</span></div><div class="hero-grid"><div class="mono kicker">PRANAV CHANDANE · MUMBAI / INDIA</div><h1><span>Studio</span><span>TinTin</span></h1><div class="hero-foot"><p class="hero-copy">Cinematographer · Director · Creative Producer<br>Visual storytelling across feature films, web series, advertising campaigns and large-scale live events.</p><div class="scroll mono"><i></i> SCROLL TO EXPLORE</div></div></div></header>
 <section class="intro block"><div class="wrap"><p class="reveal">Turning the filmmaking process into <em>visual stories</em> — from the first frame on set to the final piece of the campaign.</p></div></section>
 <section id="work" class="block"><div class="wrap"><div class="head mono"><span>SELECTED FILM & SERIES</span><span>01 — 08</span></div>
-<article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="ctrl.jpg" data-links="WATCH FILM|https://youtu.be/cM7DOwbeVIM|REEL 01|https://www.instagram.com/reel/DU2WwbFE_wY/?stkn=Ymc0OXZvM2lhaWdo|REEL 02|https://www.instagram.com/reel/DUsWwUoErlN/?stkn=Zmg4OTBzN2EweHhs"><div class="work-image"><img src="ctrl.jpg" alt="Kohrra Season 2 portfolio image"></div><div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div></article>
+<article class="work-item reveal" data-title="Kohrra Season 2" data-role="BTS Cinematographer · Creative Direction · EPK" data-text="Netflix web series directed by Sudip Sharma and Faisal Rahman. BTS cinematography and creative direction for Electronic Press Kit interviews and behind-the-scenes content, documenting the filmmaking process and creating cinematic BTS and EPK material." data-img="ctrl.jpg" data-links="WATCH FILM|https://youtu.be/cM7DOwbeVIM', 'https://www.instagram.com/reel/DUsWwUoErlN/?stkn=Zmg4OTBzN2EweHhs'', 'https://www.instagram.com/reel/DU2WwbFE_wY/?stkn=Ymc0OXZvM2lhaWdo'"><div class="work-image"><img src="ctrl.jpg" alt="Kohrra Season 2 portfolio image"></div><div class="work-meta"><span class="mono">01</span><strong class="work-title">KOHRRA S2</strong><span class="work-info mono">NETFLIX<br>BTS / EPK</span></div></article>
 <article class="work-item reveal" data-title="CTRL" data-role="BTS Cinematographer · BTS Director" data-text="Netflix movie directed by Vikramaditya Motwane. BTS cinematography and direction, capturing the creative process, on-set moments and making of the film through an engaging visual storytelling approach." data-img="kohrra.jpg" data-links="CTRL|https://youtu.be/EqHM9rw50d4"><div class="work-image"><img src="kohrra.jpg" alt="CTRL portfolio image"></div><div class="work-meta"><span class="mono">02</span><strong class="work-title">CTRL</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div></article>
 <article class="work-item reveal" data-title="Black Warrant" data-role="BTS Cinematographer · Director" data-text="Netflix web series. BTS cinematography and direction focused on key production moments, the intensity of action, performances, craftsmanship and the dynamic working environment on set." data-img="black-warrant.jpg" data-links="WATCH VIDEO|https://youtu.be/qoShUvFfEZU|REEL 01|https://www.instagram.com/reel/DGxpcsCyfJA/?stkn=bmpjYWlyNjY1ZzN0|REEL 02|https://www.instagram.com/reel/DHmmW-KoarK/?stkn=ZGdibG1xMzJvZmEy|REEL 03|https://www.instagram.com/reel/DHpd5i5Ibjy/?stkn=Ym10ZWV5czg3ZXN5"><div class="work-image"><img src="black-warrant.jpg" alt="Black Warrant portfolio image"></div><div class="work-meta"><span class="mono">03</span><strong class="work-title">BLACK WARRANT</strong><span class="work-info mono">NETFLIX<br>BTS / MARKETING</span></div></article>
 <article class="work-item reveal" data-title="Jubilee" data-role="BTS Cinematography" data-text="Behind-the-scenes work documenting the creative process and key moments during production, creating marketing content for social media." data-img="jubilee.jpg" data-links="WATCH VIDEO|https://youtu.be/S6pKD6_WozM"><div class="work-image"><img src="jubilee.jpg" alt="Jubilee portfolio image"></div><div class="work-meta"><span class="mono">04</span><strong class="work-title">JUBILEE</strong><span class="work-info mono">AMAZON PRIME<br>BTS</span></div></article>
@@ -666,7 +535,7 @@ footer{
 <section id="services" class="block"><div class="wrap"><div class="head mono"><span>CAPABILITIES</span><span>WHAT WE DO</span></div><div class="services"><div class="service reveal"><span class="mono">01</span><h3>FILM</h3><p>BTS cinematography, EPKs, production documentation, film stills, interviews and marketing content.</p></div><div class="service reveal"><span class="mono">02</span><h3>ADVERTISING</h3><p>Campaign content, behind-the-scenes films, brand storytelling and digital campaign assets.</p></div><div class="service reveal"><span class="mono">03</span><h3>CREATIVE DIRECTION</h3><p>Creative direction and execution for EPKs, BTS narratives and visual marketing pieces.</p></div><div class="service reveal"><span class="mono">04</span><h3>LIVE / CULTURE</h3><p>Live event coverage and fast-turnaround social content for large-scale experiences.</p></div></div></div></section>
 <section class="block"><div class="wrap"><div class="head mono"><span>SELECTED CREDITS</span><span>COLLABORATIONS</span></div><div class="credits"><div class="credit">Netflix</div><div class="credit">Amazon Prime Video</div><div class="credit">A24</div><div class="credit">Canali</div><div class="credit">Applause Entertainment</div><div class="credit">Harkat</div><div class="credit">MINI India</div><div class="credit">Myntra</div><div class="credit">Mahindra Blues Festival</div></div></div></section>
 <section class="block"><div class="wrap"><div class="head mono"><span>UPCOMING</span><span>2027</span></div><div class="two-col"><div class="reveal"><div class="peasant-card" style="background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72)),url('peasant.jpg');background-size:cover;background-position:center"><div class="peasant-copy"><span class="mono">A24 · 2027</span><h3>THE<br>PEASANT</h3><p>BTS · EPK · MARKETING</p></div></div></div><div class="about-copy reveal"><h2>THE<br>PEASANT</h2><p class="peasant-lead">A DEFINING CHAPTER.</p><p>A defining project in my journey as a filmmaker. A feature film produced by A24, The Peasant gave me the opportunity to work closely within an ambitious international production, documenting the filmmaking process from the ground up.</p><p>I served as the BTS Cinematographer, while also leading the creative direction and execution of the EPK and behind-the-scenes content. My work involved capturing filmmaker and cast interviews, documenting the craft and scale of the production, and filming large-scale action sequences.</p><p>The aim was to create cinematic BTS and EPK films that went beyond documentation — bringing the film’s vision, craftsmanship, performances and filmmaking process to life for an international audience.</p></div></div></div></section>
-<section id="contact" class="contact"><div class="wrap"><div class="mono">CONTACT / COMMISSIONS</div><h2>LET’S<br>MAKE<br>THE ORDINARY<br>UNFOLD.</h2><a class="email" href="mailto:work.pranavchandane@gmail.com">work.pranavchandane@gmail.com</a></div></section>
+<section id="contact" class="contact"><div class="wrap"><div class="mono">CONTACT / COMMISSIONS</div><h2>LET'S<br>MAKE<br>SOMETHING.</h2><a class="email" href="mailto:work.pranavchandane@gmail.com">work.pranavchandane@gmail.com</a></div></section>
 <footer><div class="wrap foot"><span class="mono">© 2026 STUDIO TINTIN · PRANAV CHANDANE</span><div class="social"><a class="mono" href="mailto:work.pranavchandane@gmail.com">EMAIL</a><a class="mono" href="pranav-chandane-portfolio.pdf" target="_blank">PORTFOLIO PDF</a></div></div></footer>
 <div class="modal" id="modal"><button class="close" aria-label="Close">×</button><div class="modal-inner"><div class="mono" id="mRole"></div><h2 id="mTitle"></h2><p id="mText"></p><div class="modal-video" id="mVideo"></div><div class="links" id="mLinks"></div><img class="modal-img" id="mImg" alt=""></div></div>
 <script>
