@@ -470,6 +470,58 @@ nav a{
   }
 }
 
+
+/* HERO LAYERING FIX
+   The contrast overlay must sit BEHIND the typography.
+   This restores the original visibility while keeping the improved contrast. */
+.hero:after{
+  z-index:0!important;
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,.42) 0%,
+      rgba(0,0,0,.22) 32%,
+      rgba(0,0,0,.08) 62%,
+      rgba(0,0,0,.28) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(0,0,0,.22) 0%,
+      rgba(0,0,0,.02) 42%,
+      rgba(0,0,0,.50) 100%
+    )!important;
+}
+.hero-grid{
+  position:relative!important;
+  z-index:1!important;
+}
+.hero-project{
+  z-index:4!important;
+}
+.hero h1{
+  color:#F1F0EC!important;
+  opacity:1!important;
+  text-shadow:0 2px 22px rgba(0,0,0,.5)!important;
+}
+.hero .kicker{
+  color:#F1F0EC!important;
+  opacity:1!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.7)!important;
+}
+.hero .hero-copy{
+  color:#F1F0EC!important;
+  opacity:1!important;
+  text-shadow:0 1px 12px rgba(0,0,0,.75)!important;
+}
+.hero .scroll{
+  color:#F1F0EC!important;
+}
+.hero-project,
+.hero-project strong,
+.hero-project span,
+.hero-project .hero-number{
+  color:#F1F0EC!important;
+  opacity:1!important;
+}
+
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
