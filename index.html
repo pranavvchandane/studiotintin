@@ -374,6 +374,102 @@ nav a{letter-spacing:.035em!important}
 footer,footer a{font-size:10px!important;letter-spacing:.105em!important}
 .kicker,.head .label,.section-label,.work-info,.work-number,.head .count,.contact .kicker,.about-kicker,.service-label{color:rgba(238,238,233,.72)!important}
 @media(max-width:760px){nav .logo,.nav-logo,nav a{font-size:10px!important}.kicker,.head .label,.section-label,.work-info,.work-number,.head .count,.contact .kicker{font-size:9.5px!important}}
+
+/* =========================================================
+   HERO CONTRAST FIX — text must remain readable over any slide
+   ========================================================= */
+
+/* Stronger local contrast, without making the whole hero muddy */
+.hero:after{
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.55) 30%,
+      rgba(0,0,0,.18) 58%,
+      rgba(0,0,0,.48) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(0,0,0,.38) 0%,
+      rgba(0,0,0,.04) 38%,
+      rgba(0,0,0,.76) 100%
+    )!important;
+}
+
+/* Location / identity line */
+.hero-copy .kicker,
+.hero-copy .eyebrow,
+.hero-copy .label{
+  color:#F1F0EC!important;
+  opacity:.9!important;
+  text-shadow:0 1px 14px rgba(0,0,0,.9)!important;
+}
+
+/* Main title */
+.hero-copy h1{
+  color:#F1F0EC!important;
+  text-shadow:0 2px 28px rgba(0,0,0,.62)!important;
+}
+
+/* Description at the bottom */
+.hero-copy p{
+  color:rgba(241,240,236,.9)!important;
+  text-shadow:0 1px 16px rgba(0,0,0,.95)!important;
+}
+
+/* Give the description a very subtle local fade behind it */
+.hero-copy p{
+  position:relative;
+  z-index:1;
+}
+.hero-copy p:before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-28px;
+  top:-18px;
+  right:-80px;
+  bottom:-18px;
+  background:radial-gradient(
+    ellipse at 25% 50%,
+    rgba(0,0,0,.58) 0%,
+    rgba(0,0,0,.25) 48%,
+    transparent 78%
+  );
+  pointer-events:none;
+}
+
+/* Right-side project title / role */
+.hero-project,
+.hero-project strong,
+.hero-project span,
+.hero-project .hero-number{
+  color:#F1F0EC!important;
+  text-shadow:0 1px 15px rgba(0,0,0,.95)!important;
+}
+.hero-project{
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.35));
+}
+
+/* Navigation remains visible on bright frames */
+nav,
+nav .logo,
+nav a{
+  text-shadow:0 1px 12px rgba(0,0,0,.75)!important;
+}
+
+/* Mobile gets a little more contrast */
+@media(max-width:760px){
+  .hero:after{
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.22)),
+      linear-gradient(180deg,rgba(0,0,0,.38),transparent 38%,rgba(0,0,0,.82))!important;
+  }
+  .hero-copy p:before{
+    left:-16px;
+    right:-30px;
+  }
+}
+
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
