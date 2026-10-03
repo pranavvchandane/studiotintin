@@ -522,6 +522,42 @@ nav a{
   opacity:1!important;
 }
 
+
+/* WORK / PROJECT REEL REFINEMENT */
+#work{padding-top:110px!important;padding-bottom:150px!important}
+#work .head{width:92vw!important;max-width:1440px!important;margin:0 auto 72px!important;display:flex!important;align-items:flex-end!important;justify-content:space-between!important}
+#work .head h2{font-size:clamp(38px,4.4vw,62px)!important;line-height:.92!important;letter-spacing:-.06em!important;font-weight:550!important}
+#work .head .label,#work .head .count{font-size:10px!important;letter-spacing:.14em!important}
+#work .work-grid{width:92vw!important;max-width:1440px!important;margin:0 auto!important;display:block!important}
+#work .work-item{width:80%!important;margin:0 0 130px!important}
+#work .work-item:nth-child(2){width:66%!important;margin-left:34%!important}
+#work .work-item:nth-child(3){width:74%!important;margin-left:10%!important}
+#work .work-item:nth-child(4){width:86%!important;margin-left:14%!important}
+#work .work-item:nth-child(5){width:69%!important;margin-left:0!important}
+#work .work-item:nth-child(6){width:78%!important;margin-left:22%!important}
+#work .work-item:nth-child(7){width:72%!important;margin-left:7%!important}
+#work .work-item:nth-child(8){width:84%!important;margin-left:16%!important}
+#work .work-image{background:#090d0d!important}
+#work .work-image img{transition:transform 1.15s cubic-bezier(.16,1,.3,1),filter 1.1s ease!important;filter:saturate(.78) contrast(1.02)!important}
+#work .work-item:hover .work-image img{transform:scale(1.035)!important;filter:saturate(.96) contrast(1.02)!important}
+#work .work-meta{min-height:64px!important;padding:15px 0 0!important;margin-top:12px!important;border-top:1px solid rgba(238,238,233,.15)!important;display:grid!important;grid-template-columns:1fr auto!important;column-gap:30px!important;align-items:start!important}
+#work .work-title{font-size:clamp(26px,3.05vw,45px)!important;line-height:.94!important;letter-spacing:-.055em!important;transition:none!important}
+#work .work-info{max-width:260px!important;padding-top:3px!important;text-align:right!important;font-size:10px!important;line-height:1.5!important;letter-spacing:.07em!important;color:rgba(238,238,233,.58)!important}
+#work .work-item:after{content:"VIEW  ↗";right:0!important;top:16px!important;font:9px "DM Mono",monospace!important;letter-spacing:.14em!important;color:rgba(238,238,233,.75)!important;opacity:0!important;transform:translateY(5px)!important;transition:opacity .45s ease,transform .55s cubic-bezier(.16,1,.3,1)!important}
+#work .work-item:hover:after{opacity:1!important;transform:none!important}
+#work .work-item[data-title="MINI India — Joy-Town"] .work-image,#work .work-item[data-title="Canali × Ali Fazal — Fall/Winter 2025"] .work-image{background:#080b0b!important;display:flex!important;align-items:center!important;justify-content:center!important}
+#work .work-item[data-title="MINI India — Joy-Town"] .work-image img,#work .work-item[data-title="Canali × Ali Fazal — Fall/Winter 2025"] .work-image img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
+@media(max-width:760px){
+#work{padding-top:75px!important;padding-bottom:85px!important}
+#work .head{width:calc(100% - 40px)!important;margin-bottom:46px!important}
+#work .head h2{font-size:38px!important}
+#work .work-grid{width:calc(100% - 40px)!important}
+#work .work-item,#work .work-item:nth-child(n){width:100%!important;margin-left:0!important;margin-bottom:72px!important}
+#work .work-meta{min-height:0!important;grid-template-columns:1fr!important;gap:8px!important}
+#work .work-title{font-size:29px!important}
+#work .work-info{max-width:none!important;text-align:left!important;font-size:9px!important}
+#work .work-item:after{display:none!important}
+}
 </style>
 </head>
 <body><div class="progress"></div><div class="grain"></div><div class="cursor"></div><div class="cursor-dot"></div>
